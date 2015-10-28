@@ -11,6 +11,9 @@ public class ActionField extends JPanel {
     private boolean COLORDED_MODE = true;
     private BattleField battleField;
     private Tank tank;
+    private Tiger tigerTank;
+    private BT7 bt7Tank;
+    private T34 t34Tank;
     private ActionField af;
     private BattleField bf;
     private Bullet bullet;
@@ -18,6 +21,9 @@ public class ActionField extends JPanel {
     public ActionField() throws Exception {
         battleField = new BattleField();
         tank = new Tank(this, battleField);
+        tigerTank = new Tiger(this, battleField);
+        bt7Tank = new BT7(this, battleField);
+        t34Tank = new T34(this, battleField);
         bullet = new Bullet(-100, -100, Direction.NONE);
 
         JFrame frame = new JFrame("BATTLE FIELD, DAY 2");
@@ -33,8 +39,11 @@ public class ActionField extends JPanel {
 
         tank.fire();
         tank.fire();
-        tank.fire();
-        tank.fire();
+        tigerTank.move();
+        bt7Tank.move();
+        t34Tank.move();
+        //tank.clean();
+        //tank.moveRandom();
 
     }
 
