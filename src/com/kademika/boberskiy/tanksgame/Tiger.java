@@ -5,18 +5,19 @@ package com.kademika.boberskiy.tanksgame;
  */
 public class Tiger extends Tank {
 
+    private int armor;
+
     public Tiger(ActionField af, BattleField bf) {
         super(af, bf);
+        armor = 1;
     }
 
-    @Override
-    public String toString() {
-        return "Tiger super tank";
+    public int getArmor() {
+        return armor;
     }
 
-    @Override
-    public void move() throws Exception {
-        System.out.println(this.toString() + " is moving");
+    public void setArmor(int armor) {
+        this.armor = armor;
     }
 
 }

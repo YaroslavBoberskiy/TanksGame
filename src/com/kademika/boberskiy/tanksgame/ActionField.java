@@ -39,9 +39,6 @@ public class ActionField extends JPanel {
 
         tank.fire();
         tank.fire();
-        tigerTank.move();
-        bt7Tank.move();
-        t34Tank.move();
         //tank.clean();
         //tank.moveRandom();
 

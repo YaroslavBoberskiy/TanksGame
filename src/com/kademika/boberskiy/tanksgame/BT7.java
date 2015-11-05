@@ -7,16 +7,8 @@ public class BT7 extends Tank {
 
     public BT7(ActionField af, BattleField bf) {
         super(af, bf);
+        speed = super.getSpeed()*2;
     }
 
-    @Override
-    public String toString() {
-        return "BT7 easy tank";
-    }
-
-    @Override
-    public void move() throws Exception {
-        System.out.println(this.toString() + " is moving");
-    }
 
 }
