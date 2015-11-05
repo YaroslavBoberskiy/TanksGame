@@ -10,5 +10,4 @@ public class Launcher {
         ActionField af = new ActionField();
         af.runTheGame();
     }
-
 }
