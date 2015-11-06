@@ -18,14 +18,11 @@ public class ActionField extends JPanel {
     private BattleField bf;
     private Bullet bullet;
 
-    private int[] predefCoordinate = new int[]{64, 256, 448};
-    private Random random = new Random();
-
     public ActionField() throws Exception {
         battleField = new BattleField();
         defender = new TankDefender(this, battleField);
-        agressor = new TankAgressor(this, battleField, predefCoordinate[random.nextInt(predefCoordinate.length)],
-                predefCoordinate[random.nextInt(predefCoordinate.length)], Direction.UP);
+        agressor = new TankAgressor(this, battleField);
+        agressor.setNewRandomLocation();
 
         bullet = new Bullet(-100, -100, Direction.NONE);
 
@@ -41,10 +38,8 @@ public class ActionField extends JPanel {
     void runTheGame() throws Exception {
 
         defender.fire();
-        defender.move();
-        defender.turn(Direction.LEFT);
-        defender.move();
         defender.fire();
+
         //tank.clean();
         //tank.moveRandom();
 
@@ -124,10 +119,11 @@ public class ActionField extends JPanel {
         }
     }
 
-    boolean processInterception() {
+    boolean processInterception() throws InterruptedException {
 
         String bulletCoordinates = getQuadrant(bullet.getX(), bullet.getY());
         String defenderCoordinates = getQuadrant(defender.getX(), defender.getY());
+        String agressorCoordinates = getQuadrant(agressor.getX(), agressor.getY());
 
         int y = Integer.parseInt(bulletCoordinates.split("_")[0]);
         int x = Integer.parseInt(bulletCoordinates.split("_")[1]);
@@ -143,19 +139,27 @@ public class ActionField extends JPanel {
                 defender.selfDestroy();
                 return true;
             }
+
+            if (processInterceptionCheck(agressorCoordinates, bulletCoordinates)) {
+                agressor.selfDestroy();
+                Thread.sleep(3000);
+                agressor.setNewRandomLocation();
+                return true;
+            }
         }
         return false;
     }
 
-    private boolean processInterceptionCheck(String tankCoordinates, String bulettCoordinates) {
-        int bY = Integer.parseInt(bulettCoordinates.split("_")[0]);
-        int bX = Integer.parseInt(bulettCoordinates.split("_")[1]);
+    private boolean processInterceptionCheck(String tankCoordinates, String bulletCoordinates) {
+        int bY = Integer.parseInt(bulletCoordinates.split("_")[0]);
+        int bX = Integer.parseInt(bulletCoordinates.split("_")[1]);
 
         int tY = Integer.parseInt(tankCoordinates.split("_")[0]);
         int tX = Integer.parseInt(tankCoordinates.split("_")[1]);
 
         if (bX >= 0 & bX < 9 & bY >= 0 & bY < 9 & tX >= 0 & tX < 9 & tY >= 0 & tY < 9) {
-            if ((bY == tY) && (bX == tX)) {
+            if ((bX == tX) & (bY == tY)) {
+                System.out.println("bX = " + bX + "tX = " + tX + "bY = " + bY + "tY = " + tY);
                 return true;
             }
         }

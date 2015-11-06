@@ -157,4 +157,12 @@ public class Tank {
         af.repaint();
     }
 
+    public  void  setNewRandomLocation () {
+        Random random = new Random();
+        String[] predefCoordinate = new String []{"128_448", "128_256", "448_448"};
+        this.x = Integer.parseInt(predefCoordinate[random.nextInt(predefCoordinate.length)].split("_")[1]);
+        this.y = Integer.parseInt(predefCoordinate[random.nextInt(predefCoordinate.length)].split("_")[0]);
+        af.repaint();
+    }
+
 }
