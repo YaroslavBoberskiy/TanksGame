@@ -5,6 +5,8 @@ package com.kademika.boberskiy.tanksgame;
  */
 public class TankAgressor extends Tank {
 
+    private int armor = 1;
+
     public TankAgressor (ActionField af, BattleField bf) {
         super(af, bf);
     }
@@ -13,4 +15,11 @@ public class TankAgressor extends Tank {
         super(af, bf, x, y, direction);
     }
 
+    public int getArmor() {
+        return armor;
+    }
+
+    public void setArmor(int armor) {
+        this.armor = armor;
+    }
 }

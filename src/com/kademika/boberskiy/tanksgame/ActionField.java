@@ -2,7 +2,6 @@ package com.kademika.boberskiy.tanksgame;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.Random;
 
 /**
  * Created by YB on 26.10.2015.
@@ -37,6 +36,8 @@ public class ActionField extends JPanel {
 
     void runTheGame() throws Exception {
 
+        defender.fire();
+        defender.fire();
         defender.fire();
         defender.fire();
 
@@ -119,7 +120,7 @@ public class ActionField extends JPanel {
         }
     }
 
-    boolean processInterception() throws InterruptedException {
+    boolean processInterception() {
 
         String bulletCoordinates = getQuadrant(bullet.getX(), bullet.getY());
         String defenderCoordinates = getQuadrant(defender.getX(), defender.getY());
@@ -141,10 +142,14 @@ public class ActionField extends JPanel {
             }
 
             if (processInterceptionCheck(agressorCoordinates, bulletCoordinates)) {
-                agressor.selfDestroy();
-                Thread.sleep(3000);
-                agressor.setNewRandomLocation();
-                return true;
+                if (agressor.getArmor() == 0) {
+                    agressor.selfDestroy();
+                    return true;
+                }
+                else {
+                    agressor.setArmor(agressor.getArmor() - 1);
+                    return true;
+                }
             }
         }
         return false;
@@ -158,7 +163,7 @@ public class ActionField extends JPanel {
         int tX = Integer.parseInt(tankCoordinates.split("_")[1]);
 
         if (bX >= 0 & bX < 9 & bY >= 0 & bY < 9 & tX >= 0 & tX < 9 & tY >= 0 & tY < 9) {
-            if ((bX == tX) & (bY == tY)) {
+            if ((bX == tX) && (bY == tY)) {
                 System.out.println("bX = " + bX + "tX = " + tX + "bY = " + bY + "tY = " + tY);
                 return true;
             }
