@@ -5,15 +5,15 @@ import java.util.Random;
 /**
  * Created by YB on 05.11.2015.
  */
-public class TankAgressor extends AbstractTank {
+public class Tiger extends AbstractTank {
 
     private int armor = 1;
 
-    public TankAgressor (ActionField af, BattleField bf) {
+    public Tiger(ActionField af, BattleField bf) {
         super(af, bf);
     }
 
-    public TankAgressor(ActionField af, BattleField bf, int x, int y, Direction direction) {
+    public Tiger(ActionField af, BattleField bf, int x, int y, Direction direction) {
         super(af, bf, x, y, direction);
     }
 

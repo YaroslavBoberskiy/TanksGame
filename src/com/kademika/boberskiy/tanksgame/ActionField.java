@@ -11,8 +11,8 @@ public class ActionField extends JPanel {
 
     private boolean COLORDED_MODE = true;
     private BattleField battleField;
-    private TankDefender defender;
-    private TankAgressor agressor;
+    private T34 defender;
+    private Tiger agressor;
 
     private ActionField af;
     private BattleField bf;
@@ -20,8 +20,8 @@ public class ActionField extends JPanel {
 
     public ActionField() throws Exception {
         battleField = new BattleField();
-        defender = new TankDefender(this, battleField);
-        agressor = new TankAgressor(this, battleField, 512, 128, Direction.DOWN);
+        defender = new T34(this, battleField);
+        agressor = new Tiger(this, battleField, 512, 128, Direction.DOWN);
 
         bullet = new Bullet(-100, -100, Direction.NONE);
 
@@ -52,7 +52,7 @@ public class ActionField extends JPanel {
 
     public void processMove(AbstractTank abstractTank) throws Exception {
 
-        this.defender = (TankDefender) abstractTank;
+        this.defender = (T34) abstractTank;
         Direction direction = defender.getDirection();
 
         int step = 1;
@@ -187,7 +187,7 @@ public class ActionField extends JPanel {
         String[] predefCoordinate = new String []{"128_256", "256_256", "256_448"};
         int x = Integer.parseInt(predefCoordinate[random.nextInt(predefCoordinate.length)].split("_")[1]);
         int y = Integer.parseInt(predefCoordinate[random.nextInt(predefCoordinate.length)].split("_")[0]);
-        agressor = new TankAgressor(this, battleField, x, y, Direction.DOWN);
+        agressor = new Tiger(this, battleField, x, y, Direction.DOWN);
     }
 
     @Override
