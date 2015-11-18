@@ -3,7 +3,7 @@ package com.kademika.boberskiy.tanksgame;
 /**
  * Created by YB on 05.11.2015.
  */
-public class TankDefender extends Tank {
+public class TankDefender extends AbstractTank {
 
     private ActionField af;
 

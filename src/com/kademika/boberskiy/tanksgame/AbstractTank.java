@@ -5,7 +5,7 @@ import java.util.Random;
 /**
  * Created by YB on 26.10.2015.
  */
-public class Tank {
+public abstract class AbstractTank {
 
     protected int speed = 10;
     private int x;
@@ -14,12 +14,12 @@ public class Tank {
     private BattleField bf;
     private Direction direction;
 
-    public Tank (ActionField af, BattleField bf) {
+    public AbstractTank(ActionField af, BattleField bf) {
 
         this(af, bf, 128, 128, Direction.RIGHT);
     }
 
-    public Tank(ActionField af, BattleField bf, int x, int y, Direction direction) {
+    public AbstractTank(ActionField af, BattleField bf, int x, int y, Direction direction) {
         this.af = af;
         this.bf = bf;
         this.x = x;
@@ -69,28 +69,6 @@ public class Tank {
         af.processMove(this);
     }
 
-    public void clean () throws Exception {
-        moveToQuadrant(0, 0);
-
-        for (int i = 0; i < bf.getDimensionX(); i ++) {
-            turn(Direction.RIGHT);
-            if (bf.scanQuadrant(0, i).equals("B")) {
-                fire();
-            }
-        }
-
-        for (int i = 0; i < bf.getDimensionX(); i ++) {
-            turn(Direction.DOWN);
-            for (int j = 0; j < bf.getDimensionY(); j ++) {
-                if (bf.scanQuadrant(j, i).equals("B")) {
-                    fire();
-                }
-            }
-            turn(Direction.RIGHT);
-            move();
-        }
-    }
-
     public void updateX (int x) {
         this.x += x;
     }
@@ -130,38 +108,9 @@ public class Tank {
         }
     }
 
-    public void moveRandom () throws Exception {
-        Random r = new Random();
-        int i;
-        while (true) {
-            i = r.nextInt(5);
-            if (i > 0 && i == 1) {
-                turn(Direction.UP);
-                move();
-            } else if (i > 0 && i == 2) {
-                turn(Direction.DOWN);
-                move();
-            } else if (i > 0 && i == 3) {
-                turn(Direction.LEFT);
-                move();
-            } else {
-                turn(Direction.RIGHT);
-                move();
-            }
-        }
-    }
-
     public void selfDestroy () {
         updateX (-100*64);
         updateY (-100*64);
-        af.repaint();
-    }
-
-    public  void  setNewRandomLocation () {
-        Random random = new Random();
-        String[] predefCoordinate = new String []{"128_256", "256_256", "256_448"};
-        this.x = Integer.parseInt(predefCoordinate[random.nextInt(predefCoordinate.length)].split("_")[1]);
-        this.y = Integer.parseInt(predefCoordinate[random.nextInt(predefCoordinate.length)].split("_")[0]);
         af.repaint();
     }
 

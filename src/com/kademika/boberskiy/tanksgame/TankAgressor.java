@@ -1,9 +1,11 @@
 package com.kademika.boberskiy.tanksgame;
 
+import java.util.Random;
+
 /**
  * Created by YB on 05.11.2015.
  */
-public class TankAgressor extends Tank {
+public class TankAgressor extends AbstractTank {
 
     private int armor = 1;
 

@@ -2,6 +2,7 @@ package com.kademika.boberskiy.tanksgame;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.Random;
 
 /**
  * Created by YB on 26.10.2015.
@@ -20,8 +21,7 @@ public class ActionField extends JPanel {
     public ActionField() throws Exception {
         battleField = new BattleField();
         defender = new TankDefender(this, battleField);
-        agressor = new TankAgressor(this, battleField);
-        agressor.setNewRandomLocation();
+        agressor = new TankAgressor(this, battleField, 512, 128, Direction.DOWN);
 
         bullet = new Bullet(-100, -100, Direction.NONE);
 
@@ -46,13 +46,13 @@ public class ActionField extends JPanel {
 
     }
 
-    public void processTurn(Tank tank) throws Exception {
+    public void processTurn(AbstractTank abstractTank) throws Exception {
         repaint();
     }
 
-    public void processMove(Tank tank) throws Exception {
+    public void processMove(AbstractTank abstractTank) throws Exception {
 
-        this.defender = (TankDefender) tank;
+        this.defender = (TankDefender) abstractTank;
         Direction direction = defender.getDirection();
 
         int step = 1;
@@ -60,34 +60,34 @@ public class ActionField extends JPanel {
 
         // check limits x: 0, 513; y: 0, 513
 
-        if ((direction == Direction.UP && tank.getY() == 0) || (direction == Direction.DOWN && tank.getY() >= 512) ||
-                (direction == Direction.LEFT && tank.getX() == 0) || (direction == Direction.RIGHT && tank.getX() >= 512)) {
-            System.out.println("[Illegal move] direction " + direction + "Tank X: " + tank.getX() + "Tank Y: " + tank.getY());
+        if ((direction == Direction.UP && abstractTank.getY() == 0) || (direction == Direction.DOWN && abstractTank.getY() >= 512) ||
+                (direction == Direction.LEFT && abstractTank.getX() == 0) || (direction == Direction.RIGHT && abstractTank.getX() >= 512)) {
+            System.out.println("[Illegal move] direction " + direction + "Tank X: " + abstractTank.getX() + "Tank Y: " + abstractTank.getY());
             return;
         }
-        tank.turn(direction);
+        abstractTank.turn(direction);
 
         while (covered < 64) {
             if (direction == Direction.UP) {
-                tank.updateY(-step);
+                abstractTank.updateY(-step);
                 System.out.println("[move up] direction: " + direction + " tankX: " +
-                        tank.getX() + "tankY: " + tank.getY());
+                        abstractTank.getX() + "tankY: " + abstractTank.getY());
             } else if (direction == Direction.DOWN) {
-                tank.updateY(step);
+                abstractTank.updateY(step);
                 System.out.println("[move down] direction: " + direction + " tankX: " +
-                        tank.getX() + "tankY: " + tank.getY());
+                        abstractTank.getX() + "tankY: " + abstractTank.getY());
             } else if (direction == Direction.LEFT) {
-                tank.updateX(-step);
+                abstractTank.updateX(-step);
                 System.out.println("[move left] direction: " + direction + " tankX: " +
-                        tank.getX() + "tankY: " + tank.getY());
+                        abstractTank.getX() + "tankY: " + abstractTank.getY());
             } else {
-                tank.updateX(step);
+                abstractTank.updateX(step);
                 System.out.println("[move right] direction: " + direction + " tankX: " +
-                        tank.getX() + "tankY: " + tank.getY());
+                        abstractTank.getX() + "tankY: " + abstractTank.getY());
             }
             covered += step;
             repaint();
-            Thread.sleep(tank.getSpeed());
+            Thread.sleep(abstractTank.getSpeed());
         }
     }
 
@@ -144,6 +144,7 @@ public class ActionField extends JPanel {
             if (processInterceptionCheck(agressorCoordinates, bulletCoordinates)) {
                 if (agressor.getArmor() == 0) {
                     agressor.selfDestroy();
+                    processSetNewRandomLocation();
                     return true;
                 }
                 else {
@@ -179,6 +180,14 @@ public class ActionField extends JPanel {
     public String getQuadrantXY(int v, int h) {
 
         return (v - 1) * 64 + "_" + (h - 1) * 64;
+    }
+
+    public  void  processSetNewRandomLocation() {
+        Random random = new Random();
+        String[] predefCoordinate = new String []{"128_256", "256_256", "256_448"};
+        int x = Integer.parseInt(predefCoordinate[random.nextInt(predefCoordinate.length)].split("_")[1]);
+        int y = Integer.parseInt(predefCoordinate[random.nextInt(predefCoordinate.length)].split("_")[0]);
+        agressor = new TankAgressor(this, battleField, x, y, Direction.DOWN);
     }
 
     @Override
