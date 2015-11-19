@@ -1,9 +1,11 @@
 package com.kademika.boberskiy.tanksgame;
 
+import java.awt.*;
+
 /**
  * Created by YB on 26.10.2015.
  */
-public class Bullet {
+public class Bullet implements Drawable, Destroyable {
 
     private int speed = 5;
     private int x = -100;
@@ -40,9 +42,18 @@ public class Bullet {
         this.y += y;
     }
 
-    public void destroy () {
+    @Override
+    public void draw(Graphics g) {
+
+        // BULLET
+
+        g.setColor(new Color(0, 255, 255));
+        g.fillRect(this.getX(), this.getY(), 14, 14);
+    }
+
+    @Override
+    public void selfDestroy() {
         x = -100;
         y = -100;
     }
-
 }

@@ -9,7 +9,6 @@ import java.util.Random;
  */
 public class ActionField extends JPanel {
 
-    private boolean COLORDED_MODE = true;
     private BattleField battleField;
     private T34 defender;
     private Tiger agressor;
@@ -113,7 +112,7 @@ public class ActionField extends JPanel {
                 //System.out.println("bullet-X: "+ bullet.getX()+ "bullet-Y: "+bullet.getY());
             }
             if (processInterception()) {
-                bullet.destroy();
+                bullet.selfDestroy();
             }
             repaint();
             Thread.sleep(bullet.getSpeed());
@@ -177,11 +176,6 @@ public class ActionField extends JPanel {
         return y / 64 + "_" + x / 64;
     }
 
-    public String getQuadrantXY(int v, int h) {
-
-        return (v - 1) * 64 + "_" + (h - 1) * 64;
-    }
-
     public  void  processSetNewRandomLocation() {
         Random random = new Random();
         String[] predefCoordinate = new String []{"128_256", "256_256", "256_448"};
@@ -193,78 +187,9 @@ public class ActionField extends JPanel {
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-
-        int i = 0;
-        Color cc;
-        for (int v = 0; v < 9; v++) {
-            for (int h = 0; h < 9; h++) {
-                if (COLORDED_MODE) {
-                    if (i % 2 == 0) {
-                        cc = new Color(252, 241, 177);
-                    } else {
-                        cc = new Color(233, 243, 255);
-                    }
-                } else {
-                    cc = new Color(180, 180, 180);
-                }
-                i++;
-                g.setColor(cc);
-                g.fillRect(h * 64, v * 64, 64, 64);
-            }
-        }
-
-        for (int j = 0; j < battleField.getDimensionY(); j++) {
-            for (int k = 0; k < battleField.getDimensionX(); k++) {
-                if (battleField.scanQuadrant(j, k).equals("B")) {
-                    String coordinates = getQuadrantXY(j + 1, k + 1);
-                    int separator = coordinates.indexOf("_");
-                    int y = Integer.parseInt(coordinates
-                            .substring(0, separator));
-                    int x = Integer.parseInt(coordinates
-                            .substring(separator + 1));
-                    g.setColor(new Color(0, 0, 255));
-                    g.fillRect(x, y, 64, 64);
-                }
-            }
-        }
-
-        // DEFENDER
-
-        g.setColor(new Color(255, 0, 0));
-        g.fillRect(defender.getX(), defender.getY(), 64, 64);
-
-        g.setColor(new Color(0, 255, 0));
-        if (defender.getDirection() == Direction.UP) {
-            g.fillRect(defender.getX() + 20, defender.getY(), 24, 34);
-        } else if (defender.getDirection() == Direction.DOWN) {
-            g.fillRect(defender.getX() + 20, defender.getY() + 30, 24, 34);
-        } else if (defender.getDirection() == Direction.LEFT) {
-            g.fillRect(defender.getX(), defender.getY() + 20, 34, 24);
-        } else {
-            g.fillRect(defender.getX() + 30, defender.getY() + 20, 34, 24);
-        }
-
-        // AGRESSOR
-
-        g.setColor(new Color(255, 0, 255));
-        g.fillRect(agressor.getX(), agressor.getY(), 64, 64);
-
-        g.setColor(new Color(255, 255, 0));
-        if (agressor.getDirection() == Direction.UP) {
-            g.fillRect(agressor.getX() + 20, agressor.getY(), 24, 34);
-        } else if (defender.getDirection() == Direction.DOWN) {
-            g.fillRect(agressor.getX() + 20, agressor.getY() + 30, 24, 34);
-        } else if (agressor.getDirection() == Direction.LEFT) {
-            g.fillRect(agressor.getX(), agressor.getY() + 20, 34, 24);
-        } else {
-            g.fillRect(agressor.getX() + 30, agressor.getY() + 20, 34, 24);
-        }
-
-        // BULLET
-
-        g.setColor(new Color(0, 255, 255));
-        g.fillRect(bullet.getX(), bullet.getY(), 14, 14);
-
+        battleField.draw(g);
+        defender.draw(g);
+        agressor.draw(g);
+        bullet.draw(g);
     }
-
 }

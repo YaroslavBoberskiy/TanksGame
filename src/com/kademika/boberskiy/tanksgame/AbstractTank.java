@@ -5,7 +5,7 @@ import java.util.Random;
 /**
  * Created by YB on 26.10.2015.
  */
-public abstract class AbstractTank {
+public abstract class AbstractTank implements Drawable, Destroyable {
 
     protected int speed = 10;
     private int x;
@@ -106,12 +106,6 @@ public abstract class AbstractTank {
                 move();
             }
         }
-    }
-
-    public void selfDestroy () {
-        updateX (-100*64);
-        updateY (-100*64);
-        af.repaint();
     }
 
 }
