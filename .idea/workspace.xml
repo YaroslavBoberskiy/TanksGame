@@ -7,12 +7,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fbbfd55e-1a03-467d-9572-c1039ebd580f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/kademika/boberskiy/tanksgame/Destroyable.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/kademika/boberskiy/tanksgame/Drawable.java" />
+      <change type="DELETED" beforePath="C:\Users\YB\IdeaProjects\TanksGame\out\production\TanksGame\com\kademika\boberskiy\tanksgame\TankAgressor.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\YB\IdeaProjects\TanksGame\out\production\TanksGame\com\kademika\boberskiy\tanksgame\TankDefender.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TanksGame/com/kademika/boberskiy/tanksgame/ActionField.class" afterPath="$PROJECT_DIR$/out/production/TanksGame/com/kademika/boberskiy/tanksgame/ActionField.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TanksGame/com/kademika/boberskiy/tanksgame/BattleField.class" afterPath="$PROJECT_DIR$/out/production/TanksGame/com/kademika/boberskiy/tanksgame/BattleField.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TanksGame/com/kademika/boberskiy/tanksgame/Bullet.class" afterPath="$PROJECT_DIR$/out/production/TanksGame/com/kademika/boberskiy/tanksgame/Bullet.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/kademika/boberskiy/tanksgame/AbstractTank.java" afterPath="$PROJECT_DIR$/src/com/kademika/boberskiy/tanksgame/AbstractTank.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/kademika/boberskiy/tanksgame/ActionField.java" afterPath="$PROJECT_DIR$/src/com/kademika/boberskiy/tanksgame/ActionField.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/kademika/boberskiy/tanksgame/BattleField.java" afterPath="$PROJECT_DIR$/src/com/kademika/boberskiy/tanksgame/BattleField.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/kademika/boberskiy/tanksgame/Bullet.java" afterPath="$PROJECT_DIR$/src/com/kademika/boberskiy/tanksgame/Bullet.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/kademika/boberskiy/tanksgame/T34.java" afterPath="$PROJECT_DIR$/src/com/kademika/boberskiy/tanksgame/T34.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/kademika/boberskiy/tanksgame/Tiger.java" afterPath="$PROJECT_DIR$/src/com/kademika/boberskiy/tanksgame/Tiger.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -40,7 +40,52 @@
     <favorites_list name="TanksGame" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="Launcher.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/kademika/boberskiy/tanksgame/Launcher.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="323">
+              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AbstractTank.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/kademika/boberskiy/tanksgame/AbstractTank.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1666" max-vertical-offset="2142">
+              <caret line="17" column="27" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="30" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="T34.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/kademika/boberskiy/tanksgame/T34.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="57" max-vertical-offset="578">
+              <caret line="12" column="44" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Tiger.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/kademika/boberskiy/tanksgame/Tiger.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.934555" vertical-offset="0" max-vertical-offset="697">
+              <caret line="21" column="41" selection-start-line="21" selection-start-column="41" selection-end-line="21" selection-end-column="41" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="UPDATE_CHANGES_POLICY" value="SHELVE" />
@@ -66,8 +111,8 @@
         <option value="$PROJECT_DIR$/src/com/kademika/boberskiy/tanksgame/BattleField.java" />
         <option value="$PROJECT_DIR$/src/com/kademika/boberskiy/tanksgame/Bullet.java" />
         <option value="$PROJECT_DIR$/src/com/kademika/boberskiy/tanksgame/AbstractTank.java" />
-        <option value="$PROJECT_DIR$/src/com/kademika/boberskiy/tanksgame/Tiger.java" />
         <option value="$PROJECT_DIR$/src/com/kademika/boberskiy/tanksgame/T34.java" />
+        <option value="$PROJECT_DIR$/src/com/kademika/boberskiy/tanksgame/Tiger.java" />
       </list>
     </option>
   </component>
@@ -517,7 +562,7 @@
       <workItem from="1446991008366" duration="201000" />
       <workItem from="1446991400311" duration="648000" />
       <workItem from="1447841794170" duration="3525000" />
-      <workItem from="1447937301116" duration="3523000" />
+      <workItem from="1447937301116" duration="5856000" />
     </task>
     <task id="LOCAL-00001" summary="JAR file was created">
       <created>1445854925899</created>
@@ -573,15 +618,21 @@
       <option name="project" value="LOCAL" />
       <updated>1447845140119</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Drawable_and_Destroyable_interfaces">
+      <created>1447940914688</created>
+      <option name="number" value="00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1447940914688</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54610000" />
+    <option name="totallyTimeSpent" value="56943000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-15" y="-2" width="1382" height="744" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -594,7 +645,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3344209" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3344209" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -633,7 +684,8 @@
     <MESSAGE value="Agressor has been set with armor" />
     <MESSAGE value="AbstractTank was created" />
     <MESSAGE value="T34_was_created" />
-    <option name="LAST_COMMIT_MESSAGE" value="T34_was_created" />
+    <MESSAGE value="Drawable_and_Destroyable_interfaces" />
+    <option name="LAST_COMMIT_MESSAGE" value="Drawable_and_Destroyable_interfaces" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -699,8 +751,6 @@
           <caret line="7" column="23" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#392#393#0" expanded="true" />
-            <element signature="e#438#439#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -737,7 +787,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1020" max-vertical-offset="2618">
           <caret line="68" column="29" selection-start-line="68" selection-start-column="29" selection-end-line="68" selection-end-column="29" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -792,7 +844,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1020" max-vertical-offset="2618">
           <caret line="68" column="29" selection-start-line="68" selection-start-column="29" selection-end-line="68" selection-end-column="29" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -847,7 +901,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1071" max-vertical-offset="2618">
           <caret line="71" column="41" selection-start-line="71" selection-start-column="41" selection-end-line="71" selection-end-column="41" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -902,7 +958,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="909" max-vertical-offset="2618">
           <caret line="71" column="23" selection-start-line="71" selection-start-column="16" selection-end-line="71" selection-end-column="24" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -957,7 +1015,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="2314" max-vertical-offset="2822">
           <caret line="157" column="5" selection-start-line="157" selection-start-column="5" selection-end-line="157" selection-end-column="5" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1032,22 +1092,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/kademika/boberskiy/tanksgame/T34.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.6020943" vertical-offset="0" max-vertical-offset="765">
-          <caret line="40" column="26" selection-start-line="40" selection-start-column="26" selection-end-line="40" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/kademika/boberskiy/tanksgame/Launcher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2225131" vertical-offset="0" max-vertical-offset="382">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/kademika/boberskiy/tanksgame/Bullet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.4685864" vertical-offset="0" max-vertical-offset="935">
@@ -1056,26 +1100,6 @@
             <element signature="e#602#603#0" expanded="true" />
             <element signature="e#634#635#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/kademika/boberskiy/tanksgame/Tiger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.59947646" vertical-offset="553" max-vertical-offset="935">
-          <caret line="52" column="26" selection-start-line="52" selection-start-column="26" selection-end-line="52" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#392#393#0" expanded="true" />
-            <element signature="e#438#439#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/kademika/boberskiy/tanksgame/AbstractTank.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3115183" vertical-offset="0" max-vertical-offset="1785">
-          <caret line="7" column="55" selection-start-line="7" selection-start-column="55" selection-end-line="7" selection-end-column="55" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1109,6 +1133,42 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5501355" vertical-offset="2823" max-vertical-offset="3417">
           <caret line="178" column="0" selection-start-line="178" selection-start-column="0" selection-end-line="178" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/kademika/boberskiy/tanksgame/Launcher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="323">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/kademika/boberskiy/tanksgame/AbstractTank.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1666" max-vertical-offset="2142">
+          <caret line="17" column="27" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/kademika/boberskiy/tanksgame/T34.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="57" max-vertical-offset="578">
+          <caret line="12" column="44" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/kademika/boberskiy/tanksgame/Tiger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.934555" vertical-offset="0" max-vertical-offset="697">
+          <caret line="21" column="41" selection-start-line="21" selection-start-column="41" selection-end-line="21" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
