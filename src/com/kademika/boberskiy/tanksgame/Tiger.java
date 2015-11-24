@@ -1,7 +1,6 @@
 package com.kademika.boberskiy.tanksgame;
 
 import java.awt.*;
-import java.util.Random;
 
 /**
  * Created by YB on 05.11.2015.

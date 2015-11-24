@@ -12,6 +12,10 @@ public class ActionField extends JPanel {
     private BattleField battleField;
     private T34 defender;
     private Tiger agressor;
+    private Empty empty = new Empty();
+    private Water water = new Water();
+    private Eagle eagle = new Eagle();
+    private Rock rock = new Rock();
 
     private ActionField af;
     private BattleField bf;
@@ -36,12 +40,12 @@ public class ActionField extends JPanel {
     void runTheGame() throws Exception {
 
         defender.fire();
-        defender.fire();
+        defender.move();
         defender.fire();
         defender.fire();
 
-        //tank.clean();
-        //tank.moveRandom();
+        agressor.fire();
+        agressor.fire();
 
     }
 
@@ -130,8 +134,8 @@ public class ActionField extends JPanel {
 
         if (y >= 0 && y < 9 && x >= 0 && x < 9) {
 
-            if (!battleField.scanQuadrant(y, x).trim().isEmpty()) {
-                battleField.updateQuadrant(y, x, " ");
+            if (!battleField.scanQuadrant(y, x).objectColor.equals(empty.emptyColor)) {
+                battleField.updateQuadrant(y, x, empty);
                 return true;
             }
 
