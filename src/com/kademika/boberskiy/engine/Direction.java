@@ -1,4 +1,4 @@
-package com.kademika.boberskiy.tanksgame;
+package com.kademika.boberskiy.engine;
 
 /**
  * Created by YB on 26.10.2015.

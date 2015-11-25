@@ -1,4 +1,4 @@
-package com.kademika.boberskiy.tanksgame;
+package com.kademika.boberskiy.engine;
 
 import java.awt.*;
 

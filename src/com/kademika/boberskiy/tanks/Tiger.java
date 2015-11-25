@@ -1,4 +1,8 @@
-package com.kademika.boberskiy.tanksgame;
+package com.kademika.boberskiy.tanks;
+
+import com.kademika.boberskiy.engine.ActionField;
+import com.kademika.boberskiy.battlefield.BattleField;
+import com.kademika.boberskiy.engine.Direction;
 
 import java.awt.*;
 
