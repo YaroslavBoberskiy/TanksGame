@@ -1,4 +1,6 @@
-package com.kademika.boberskiy.tanksgame;
+package com.kademika.boberskiy.tanksgame.com.kademika.boberskiy.battlefield;
+
+import com.kademika.boberskiy.tanksgame.com.kademika.boberskiy.com.kademika.boberskiy.gameengine.Drawable;
 
 import java.awt.*;
 

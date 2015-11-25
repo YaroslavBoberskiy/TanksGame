@@ -1,4 +1,10 @@
-package com.kademika.boberskiy.tanksgame;
+package com.kademika.boberskiy.tanksgame.com.kademika.boberskiy.com.kademika.boberskiy.gameengine;
+
+import com.kademika.boberskiy.tanksgame.com.kademika.boberskiy.battlefield.*;
+import com.kademika.boberskiy.tanksgame.com.kademika.boberskiy.tanks.AbstractTank;
+import com.kademika.boberskiy.tanksgame.com.kademika.boberskiy.tanks.Bullet;
+import com.kademika.boberskiy.tanksgame.com.kademika.boberskiy.tanks.T34;
+import com.kademika.boberskiy.tanksgame.com.kademika.boberskiy.tanks.Tiger;
 
 import javax.swing.*;
 import java.awt.*;
@@ -13,9 +19,6 @@ public class ActionField extends JPanel {
     private T34 defender;
     private Tiger agressor;
     private Empty empty = new Empty();
-    private Water water = new Water();
-    private Eagle eagle = new Eagle();
-    private Rock rock = new Rock();
 
     private ActionField af;
     private BattleField bf;

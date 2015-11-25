@@ -1,4 +1,4 @@
-package com.kademika.boberskiy.tanksgame;
+package com.kademika.boberskiy.tanksgame.com.kademika.boberskiy.battlefield;
 
 import java.awt.*;
 
@@ -7,9 +7,9 @@ import java.awt.*;
  */
 public class Empty extends BattleFieldAbstractObject {
 
-    protected Color emptyColor = new Color(255, 255, 255);
+    public Color emptyColor = new Color(255, 255, 255);
 
-    Empty() {
+    public Empty() {
         objectColor = emptyColor;
     }
 

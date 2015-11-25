@@ -1,4 +1,6 @@
-package com.kademika.boberskiy.tanksgame;
+package com.kademika.boberskiy.tanksgame.com.kademika.boberskiy.battlefield;
+
+import com.kademika.boberskiy.tanksgame.com.kademika.boberskiy.com.kademika.boberskiy.gameengine.Drawable;
 
 import java.awt.*;
 
@@ -7,7 +9,7 @@ import java.awt.*;
  */
 public class BattleFieldAbstractObject implements Drawable {
 
-    protected Color objectColor;
+    public Color objectColor;
     protected int objXCoordinate;
     protected int objYCoordinate;
 
@@ -15,5 +17,9 @@ public class BattleFieldAbstractObject implements Drawable {
     public void draw(Graphics g) {
         g.setColor(objectColor);
         g.fillRect(objXCoordinate, objYCoordinate, 64, 64);
+    }
+
+    public Color getObjectColor() {
+        return objectColor;
     }
 }
