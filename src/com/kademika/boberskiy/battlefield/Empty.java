@@ -7,10 +7,8 @@ import java.awt.*;
  */
 public class Empty extends BattleFieldAbstractObject {
 
-    protected Color emptyColor = new Color(255, 255, 255);
-
     public Empty() {
-        objectColor = emptyColor;
+        objectColor = new Color(255, 255, 255);
     }
 
 }

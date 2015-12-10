@@ -13,21 +13,21 @@ import java.awt.*;
  */
 public abstract class AbstractTank implements Drawable, Destroyable {
 
-    protected int speed = 10;
+    final private int speed = 10;
     private int x;
     private int y;
-    private ActionField af;
-    private BattleField bf;
+    final private ActionField af;
+    final private BattleField bf;
     private Direction direction;
-    protected Color tankColor;
-    protected Color towerColor;
+    Color tankColor;
+    Color towerColor;
 
-    public AbstractTank(ActionField af, BattleField bf) {
+    AbstractTank(ActionField af, BattleField bf) {
 
         this(af, bf, 128, 128, Direction.RIGHT);
     }
 
-    public AbstractTank(ActionField af, BattleField bf, int x, int y, Direction direction) {
+    AbstractTank(ActionField af, BattleField bf, int x, int y, Direction direction) {
         this.af = af;
         this.bf = bf;
         this.x = x;
@@ -53,7 +53,7 @@ public abstract class AbstractTank implements Drawable, Destroyable {
 
     public void turn(Direction direction) throws  Exception {
         this.direction = direction;
-        af.processTurn(this);
+        af.processTurn();
     }
 
     public void fire () throws  Exception {
@@ -73,7 +73,7 @@ public abstract class AbstractTank implements Drawable, Destroyable {
         System.out.println("FIRE");
     }
 
-    public void move() throws Exception {
+    void move() throws Exception {
         af.processMove(this);
     }
 

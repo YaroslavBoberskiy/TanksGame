@@ -1,12 +1,10 @@
 package com.kademika.boberskiy.engine;
 
 import com.kademika.boberskiy.battlefield.*;
-import com.kademika.boberskiy.tanks.AbstractTank;
-import com.kademika.boberskiy.tanks.Bullet;
-import com.kademika.boberskiy.tanks.T34;
-import com.kademika.boberskiy.tanks.Tiger;
+import com.kademika.boberskiy.tanks.*;
 
 import javax.swing.*;
+import javax.swing.Action;
 import java.awt.*;
 import java.util.Random;
 
@@ -15,17 +13,12 @@ import java.util.Random;
  */
 public class ActionField extends JPanel {
 
-    private BattleField battleField;
+    private final BattleField battleField;
     private T34 defender;
     private Tiger agressor;
-    private Empty empty = new Empty();
-    protected Water water = new Water();
-    protected Eagle eagle = new Eagle();
-    private Rock rock = new Rock();
-
-    private ActionField af;
-    private BattleField bf;
+    private final Empty empty = new Empty();
     private Bullet bullet;
+    private Action action;
 
     public ActionField() throws Exception {
         battleField = new BattleField();
@@ -34,7 +27,7 @@ public class ActionField extends JPanel {
 
         bullet = new Bullet(-100, -100, Direction.NONE);
 
-        JFrame frame = new JFrame("BATTLE FIELD, DAY 2");
+        JFrame frame = new JFrame("BATTLE FIELD, DAY 7");
         frame.setLocation(750, 150);
         frame.setMinimumSize(new Dimension(battleField.getBfWidth(), battleField.getBfHeight() + 22));
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -47,14 +40,26 @@ public class ActionField extends JPanel {
 
         defender.fire();
         defender.fire();
+        defender.turn(Direction.DOWN);
         defender.fire();
+        defender.turn(Direction.LEFT);
+        agressor.fire();
+        agressor.fire();
+        agressor.turn(Direction.UP);
 
-        agressor.fire();
-        agressor.fire();
 
     }
 
-    public void processTurn(AbstractTank abstractTank) throws Exception {
+    private void processAction(Action a, AbstractTank tank) throws Exception {
+        if (a == Action.MOVE) {
+            processMove(tank);
+        } else if (a == Action.FIRE) {
+            processTurn();
+            processFire(tank.fire());
+        }
+    }
+
+    public void processTurn() throws Exception {
         repaint();
     }
 
@@ -181,12 +186,12 @@ public class ActionField extends JPanel {
         return false;
     }
 
-    public String getQuadrant(int x, int y) {
+    String getQuadrant(int x, int y) {
 
         return y / 64 + "_" + x / 64;
     }
 
-    public  void  processSetNewRandomLocation() {
+    void  processSetNewRandomLocation() {
         Random random = new Random();
         String[] predefCoordinate = new String []{"128_256", "256_256", "256_448"};
         int x = Integer.parseInt(predefCoordinate[random.nextInt(predefCoordinate.length)].split("_")[1]);

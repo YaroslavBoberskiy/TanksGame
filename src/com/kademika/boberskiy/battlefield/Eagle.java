@@ -5,12 +5,10 @@ import java.awt.*;
 /**
  * Created by YB on 22.11.2015.
  */
-public class Eagle extends BattleFieldAbstractObject {
-
-    protected Color eagleColor = new Color(255, 200, 0);
+class Eagle extends BattleFieldAbstractObject {
 
     public Eagle() {
-        objectColor = eagleColor;
+        objectColor = new Color(255, 200, 0);
     }
 
 }

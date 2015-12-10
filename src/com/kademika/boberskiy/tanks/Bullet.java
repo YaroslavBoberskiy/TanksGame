@@ -11,10 +11,10 @@ import java.awt.*;
  */
 public class Bullet implements Drawable, Destroyable {
 
-    private int speed = 5;
     private int x = -100;
     private int y = -100;
-    private Direction direction;
+    private final int speed = 5;
+    private final Direction direction;
 
     public Bullet (int x, int y, Direction direction) {
         this.x = x;

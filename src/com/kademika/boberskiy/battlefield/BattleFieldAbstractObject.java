@@ -9,9 +9,9 @@ import java.awt.*;
  */
 public class BattleFieldAbstractObject implements Drawable {
 
-    protected Color objectColor;
-    protected int objXCoordinate;
-    protected int objYCoordinate;
+    Color objectColor;
+    int objXCoordinate;
+    int objYCoordinate;
 
     @Override
     public void draw(Graphics g) {

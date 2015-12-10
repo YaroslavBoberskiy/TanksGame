@@ -9,17 +9,17 @@ import java.awt.*;
  */
 public class BattleField implements Drawable {
 
-    protected final int BF_WIDTH = 592;
-    protected final int BF_HEIGHT = 592;
-    protected boolean COLORDED_MODE = true;
+    private final int BF_WIDTH = 592;
+    private final int BF_HEIGHT = 592;
+    private final boolean COLORED_MODE = true;
 
-    private Brick brick = new Brick();
-    private Eagle eagle = new Eagle();
-    private Water water = new Water();
-    private Rock rock = new Rock();
-    private Empty empty = new Empty();
+    private final Brick brick = new Brick();
+    private final Eagle eagle = new Eagle();
+    private final Water water = new Water();
+    private final Rock rock = new Rock();
+    private final Empty empty = new Empty();
 
-    protected BattleFieldAbstractObject[][] battleField = {
+    private BattleFieldAbstractObject[][] battleField = {
             {empty, brick, empty, empty, rock, empty, empty, empty, brick},
             {brick, brick, empty, empty, empty, empty, brick, empty, brick},
             {empty, water, empty, empty, empty, rock, empty, empty, water},
@@ -45,11 +45,11 @@ public class BattleField implements Drawable {
         battleField[v][h] = object;
     }
 
-    public int getDimensionX() {
+    int getDimensionX() {
         return battleField.length;
     }
 
-    public int getDimensionY() {
+    int getDimensionY() {
         return battleField.length;
     }
 
@@ -61,17 +61,17 @@ public class BattleField implements Drawable {
         return BF_HEIGHT;
     }
 
-    public String getQuadrantXY(int v, int h) {
+    String getQuadrantXY(int v, int h) {
 
         return (v - 1) * 64 + "_" + (h - 1) * 64;
     }
 
-    public int getObjectXCoordinate(String coordinates) {
+    int getObjectXCoordinate(String coordinates) {
         int separator = coordinates.indexOf("_");
         return Integer.parseInt(coordinates.substring(separator + 1));
     }
 
-    public int getObjectYCoordinate(String coordinates) {
+    int getObjectYCoordinate(String coordinates) {
         int separator = coordinates.indexOf("_");
         return Integer.parseInt(coordinates.substring(0, separator));
     }
@@ -82,7 +82,7 @@ public class BattleField implements Drawable {
         Color cc;
         for (int v = 0; v < 9; v++) {
             for (int h = 0; h < 9; h++) {
-                if (COLORDED_MODE) {
+                if (COLORED_MODE) {
                     if (i % 2 == 0) {
                         cc = new Color(252, 241, 177);
                     } else {
