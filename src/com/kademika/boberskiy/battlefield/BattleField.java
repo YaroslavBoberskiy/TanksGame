@@ -13,28 +13,72 @@ public class BattleField implements Drawable {
     private final int BF_HEIGHT = 592;
     private final boolean COLORED_MODE = true;
 
-    private final Brick brick = new Brick();
-    private final Eagle eagle = new Eagle();
-    private final Water water = new Water();
-    private final Rock rock = new Rock();
-    private final Empty empty = new Empty();
+    private String [][] battleFieldMap = {
+            {"empty", "brick", "brick", "empty", "rock", "empty", "empty", "empty", "brick"},
+            {"brick", "brick", "brick", "empty", "empty", "empty", "brick", "empty", "brick"},
+            {"empty", "water", "empty", "empty", "empty", "rock", "empty", "empty", "water"},
+            {"brick", "brick", "brick", "brick", "brick", "empty", "rock", "brick", "brick"},
+            {"empty", "empty", "brick", "brick", "brick", "empty", "empty", "empty", "empty"},
+            {"brick", "empty", "empty", "empty", "empty", "brick", "brick", "empty", "empty"},
+            {"empty", "empty", "water", "brick", "empty", "empty", "brick", "brick", "rock"},
+            {"empty", "eagle", "empty", "empty", "brick", "brick", "empty", "empty", "empty"},
+            {"brick", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty"},};
 
-    private BattleFieldAbstractObject[][] battleField = {
-            {empty, brick, empty, empty, rock, empty, empty, empty, brick},
-            {brick, brick, empty, empty, empty, empty, brick, empty, brick},
-            {empty, water, empty, empty, empty, rock, empty, empty, water},
-            {brick, brick, brick, brick, brick, empty, rock, brick, brick},
-            {empty, empty, brick, brick, brick, empty, empty, empty, empty},
-            {brick, empty, empty, empty, eagle, brick, brick, empty, empty},
-            {empty, empty, water, brick, empty, empty, brick, brick, rock},
-            {empty, empty, empty, empty, brick, brick, empty, empty, empty},
-            {brick, empty, empty, empty, empty, empty, empty, empty, empty},};
+    private BattleFieldAbstractObject[][] battleField = new BattleFieldAbstractObject[9][9];
 
     public BattleField() {
+        createBattleField();
     }
 
-    public BattleField(BattleFieldAbstractObject[][] battleField) {
-        this.battleField = battleField;
+    public void drawField (Graphics g) {
+        int i = 0;
+        Color cc;
+        for (int v = 0; v < 9; v++) {
+            for (int h = 0; h < 9; h++) {
+                if (COLORED_MODE) {
+                    if (i % 2 == 0) {
+                        cc = new Color(252, 241, 177);
+                    } else {
+                        cc = new Color(233, 243, 255);
+                    }
+                } else {
+                    cc = new Color(180, 180, 180);
+                }
+                i++;
+                g.setColor(cc);
+                g.fillRect(h * 64, v * 64, 64, 64);
+            }
+        }
+    }
+
+    public void createBattleField () {
+        if (battleFieldMap != null && battleField != null) {
+            for (int j = 0; j < this.getDimensionY(); j++) {
+                for (int k = 0; k < this.getDimensionX(); k++) {
+                    if (battleFieldMap[j][k].equals("empty")) {
+                        battleField[j][k] = new Empty(j, k);
+                    } else if (battleFieldMap[j][k].equals("brick")) {
+                        battleField[j][k] = new Brick(j, k);
+                    } else if (battleFieldMap[j][k].equals("water")) {
+                        battleField[j][k] = new Water(j, k);
+                    } else if (battleFieldMap[j][k].equals("eagle")) {
+                        battleField[j][k] = new Eagle(j, k);
+                    } else if (battleFieldMap[j][k].equals("rock")) {
+                        battleField[j][k] = new Rock(j, k);
+                    }else {
+                        throw new IllegalArgumentException();
+                    }
+                }
+            }
+        }
+    }
+
+    public void drawObjects (Graphics g) {
+        for (int j = 0; j < this.getDimensionY(); j++) {
+            for (int k = 0; k < this.getDimensionX(); k++) {
+                battleField[j][k].draw(g);
+            }
+        }
     }
 
     public BattleFieldAbstractObject scanQuadrant(int v, int h) {
@@ -61,65 +105,18 @@ public class BattleField implements Drawable {
         return BF_HEIGHT;
     }
 
-    String getQuadrantXY(int v, int h) {
-
-        return (v - 1) * 64 + "_" + (h - 1) * 64;
+    public BattleFieldAbstractObject[][] getBattleField() {
+        return battleField;
     }
 
-    int getObjectXCoordinate(String coordinates) {
-        int separator = coordinates.indexOf("_");
-        return Integer.parseInt(coordinates.substring(separator + 1));
-    }
-
-    int getObjectYCoordinate(String coordinates) {
-        int separator = coordinates.indexOf("_");
-        return Integer.parseInt(coordinates.substring(0, separator));
+    public void destroyObject(int v, int h) {
+        battleField[v][h].selfDestroy();
+        updateQuadrant(v, h, new Empty(v, h));
     }
 
     @Override
     public void draw(Graphics g) {
-        int i = 0;
-        Color cc;
-        for (int v = 0; v < 9; v++) {
-            for (int h = 0; h < 9; h++) {
-                if (COLORED_MODE) {
-                    if (i % 2 == 0) {
-                        cc = new Color(252, 241, 177);
-                    } else {
-                        cc = new Color(233, 243, 255);
-                    }
-                } else {
-                    cc = new Color(180, 180, 180);
-                }
-                i++;
-                g.setColor(cc);
-                g.fillRect(h * 64, v * 64, 64, 64);
-            }
-        }
-
-        for (int j = 0; j < this.getDimensionY(); j++) {
-            for (int k = 0; k < this.getDimensionX(); k++) {
-                if (this.scanQuadrant(j, k).equals(brick)) {
-                    brick.objYCoordinate = getObjectYCoordinate(getQuadrantXY(j + 1, k + 1));
-                    brick.objXCoordinate = getObjectXCoordinate(getQuadrantXY(j + 1, k + 1));
-                    brick.draw(g);
-                }
-                if (this.scanQuadrant(j, k).equals(eagle)) {
-                    eagle.objYCoordinate = getObjectYCoordinate(getQuadrantXY(j + 1, k + 1));
-                    eagle.objXCoordinate = getObjectXCoordinate(getQuadrantXY(j + 1, k + 1));
-                    eagle.draw(g);
-                }
-                if (this.scanQuadrant(j, k).equals(water)) {
-                    water.objYCoordinate = getObjectYCoordinate(getQuadrantXY(j + 1, k + 1));
-                    water.objXCoordinate = getObjectXCoordinate(getQuadrantXY(j + 1, k + 1));
-                    water.draw(g);
-                }
-                if (this.scanQuadrant(j, k).equals(rock)) {
-                    rock.objYCoordinate = getObjectYCoordinate(getQuadrantXY(j + 1, k + 1));
-                    rock.objXCoordinate = getObjectXCoordinate(getQuadrantXY(j + 1, k + 1));
-                    rock.draw(g);
-                }
-            }
-        }
+        drawField(g);
+        drawObjects(g);
     }
 }

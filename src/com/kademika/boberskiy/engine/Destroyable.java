@@ -6,5 +6,6 @@ package com.kademika.boberskiy.engine;
 public interface Destroyable {
 
     public void selfDestroy ();
+    public boolean isDestroyed();
 
 }

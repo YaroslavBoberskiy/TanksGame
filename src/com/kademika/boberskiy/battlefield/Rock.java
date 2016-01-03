@@ -5,11 +5,12 @@ import java.awt.*;
 /**
  * Created by YB on 22.11.2015.
  */
-class Rock extends BattleFieldAbstractObject {
+public class Rock extends BattleFieldAbstractObject {
 
     private final Color rockColor = new Color(150, 100, 100);
 
-    public Rock() {
+    public Rock(int x, int y) {
+        super(x, y);
         objectColor = rockColor;
     }
 

@@ -5,9 +5,10 @@ import java.awt.*;
 /**
  * Created by YB on 22.11.2015.
  */
-class Water extends BattleFieldAbstractObject {
+public class Water extends BattleFieldAbstractObject {
 
-    public Water() {
+    public Water(int x, int y) {
+        super(x, y);
         objectColor = new Color(0, 150, 255);
     }
 

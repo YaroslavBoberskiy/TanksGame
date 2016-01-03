@@ -1,10 +1,13 @@
 package com.kademika.boberskiy.tanks;
 
-import com.kademika.boberskiy.engine.ActionField;
 import com.kademika.boberskiy.battlefield.BattleField;
+import com.kademika.boberskiy.battlefield.BattleFieldAbstractObject;
+import com.kademika.boberskiy.battlefield.Eagle;
+import com.kademika.boberskiy.engine.ActionField;
 import com.kademika.boberskiy.engine.Direction;
 
 import java.awt.*;
+import java.util.NoSuchElementException;
 
 /**
  * Created by YB on 05.11.2015.
@@ -23,10 +26,35 @@ public class T34 extends AbstractTank {
         towerColor = new Color(255, 0, 128);
     }
 
+    private Object[] actions = new Object[]{
+            Direction.RIGHT,
+            Actions.FIRE,
+            Actions.MOVE,
+            Actions.FIRE,
+            Direction.LEFT,
+            Actions.MOVE,
+    };
+
+    private int currentStep = 0;
+
+    @Override
+    public Actions setUp() {
+        if (currentStep >= actions.length) {
+            currentStep = 0;
+        }
+        if (!(actions[currentStep] instanceof Actions)) {
+            turn((Direction) actions[currentStep++]);
+        }
+        if (currentStep >= actions.length) {
+            currentStep = 0;
+        }
+        return (Actions) actions[currentStep++];
+    }
 
     @Override
     public void selfDestroy() {
-        updateX (-100*64);
-        updateY (-100*64);
+        super.selfDestroy();
     }
+
+
 }

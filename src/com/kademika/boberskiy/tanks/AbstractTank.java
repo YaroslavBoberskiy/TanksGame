@@ -11,20 +11,23 @@ import java.awt.*;
 /**
  * Created by YB on 26.10.2015.
  */
-public abstract class AbstractTank implements Drawable, Destroyable {
+public abstract class AbstractTank implements Drawable, Destroyable, Tankable {
 
     final private int speed = 10;
+    protected int movePath = 1;
     private int x;
     private int y;
-    final private ActionField af;
-    final private BattleField bf;
     private Direction direction;
+    private boolean destroyed;
     Color tankColor;
     Color towerColor;
+    public BattleField bf;
+    private ActionField af;
 
     AbstractTank(ActionField af, BattleField bf) {
 
         this(af, bf, 128, 128, Direction.RIGHT);
+        this.destroyed = false;
     }
 
     AbstractTank(ActionField af, BattleField bf, int x, int y, Direction direction) {
@@ -33,6 +36,7 @@ public abstract class AbstractTank implements Drawable, Destroyable {
         this.x = x;
         this.y = y;
         this.direction = direction;
+        this.destroyed = false;
     }
 
     public int getX() {
@@ -51,87 +55,71 @@ public abstract class AbstractTank implements Drawable, Destroyable {
         return direction;
     }
 
-    public void turn(Direction direction) throws  Exception {
+    public void turn(Direction direction) {
         this.direction = direction;
-        af.processTurn();
     }
 
-    public void fire () throws  Exception {
+    public Bullet fire() {
+        int bulletX = -100;
+        int bulletY = -100;
         if (direction == Direction.UP) {
-            Bullet bullet = new Bullet((x + 25), y, direction);
-            af.processFire(bullet);
+            bulletX = x + 25;
+            bulletY = y - 64;
         } else if (direction == Direction.DOWN) {
-            Bullet bullet = new Bullet(x+25, y+64, direction);
-            af.processFire(bullet);
+            bulletX = x + 25;
+            bulletY = y + 64;
         } else if (direction == Direction.LEFT) {
-            Bullet bullet = new Bullet(x, y+25, direction);
-            af.processFire(bullet);
+            bulletX = x - 64;
+            bulletY = y + 25;
         } else if (direction == Direction.RIGHT) {
-            Bullet bullet = new Bullet(x+64, y+25, direction);
-            af.processFire(bullet);
+            bulletX = x + 64;
+            bulletY = y + 25;
         }
-        System.out.println("FIRE");
+        return new Bullet(bulletX, bulletY, direction);
     }
 
-    void move() throws Exception {
-        af.processMove(this);
+    public void move() {
     }
 
-    public void updateX (int x) {
+    public void updateX(int x) {
         this.x += x;
     }
 
-    public void updateY (int y) {
+    public void updateY(int y) {
         this.y += y;
     }
 
-    public void moveToQuadrant(int localY, int localX) throws Exception {
+    @Override
+    public void selfDestroy() {
+        destroyed = true;
+    }
 
-        if (this.x < localX*64) {
-            while (this.x != localX*64) {
-                turn(Direction.RIGHT);
-                fire();
-                move();
-            }
-        } else {
-            while (this.x != localX*64) {
-                turn(Direction.LEFT);
-                fire();
-                move();
-            }
-        }
+    @Override
+    public boolean isDestroyed() {
+        return destroyed;
+    }
 
-        if (this.y < localY*64) {
-            while (this.y != localY*64) {
-                turn(Direction.DOWN);
-                fire();
-                move();
-            }
-        } else {
-            while (this.y != localY*64) {
-                turn(Direction.UP);
-                fire();
-                move();
+    @Override
+    public void draw(Graphics g) {
+        if (!destroyed) {
+            g.setColor(tankColor);
+            g.fillRect(this.getX(), this.getY(), 64, 64);
+            g.setColor(towerColor);
+            if (this.getDirection() == Direction.UP) {
+                g.fillRect(this.getX() + 20, this.getY(), 24, 34);
+            } else if (this.getDirection() == Direction.DOWN) {
+                g.fillRect(this.getX() + 20, this.getY() + 30, 24, 34);
+            } else if (this.getDirection() == Direction.LEFT) {
+                g.fillRect(this.getX(), this.getY() + 20, 34, 24);
+            } else {
+                g.fillRect(this.getX() + 30, this.getY() + 20, 34, 24);
             }
         }
     }
 
     @Override
-    public void draw(Graphics g) {
-
-        g.setColor(tankColor);
-        g.fillRect(this.getX(), this.getY(), 64, 64);
-
-        g.setColor(towerColor);
-        if (this.getDirection() == Direction.UP) {
-            g.fillRect(this.getX() + 20, this.getY(), 24, 34);
-        } else if (this.getDirection() == Direction.DOWN) {
-            g.fillRect(this.getX() + 20, this.getY() + 30, 24, 34);
-        } else if (this.getDirection() == Direction.LEFT) {
-            g.fillRect(this.getX(), this.getY() + 20, 34, 24);
-        } else {
-            g.fillRect(this.getX() + 30, this.getY() + 20, 34, 24);
-        }
+    public int getMovePath() {
+        return movePath;
     }
 
 }

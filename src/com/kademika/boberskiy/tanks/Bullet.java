@@ -15,11 +15,13 @@ public class Bullet implements Drawable, Destroyable {
     private int y = -100;
     private final int speed = 5;
     private final Direction direction;
+    private boolean destroyed;
 
     public Bullet (int x, int y, Direction direction) {
         this.x = x;
         this.y = y;
         this.direction = direction;
+        this.destroyed = false;
     }
 
     public int getSpeed() {
@@ -46,18 +48,25 @@ public class Bullet implements Drawable, Destroyable {
         this.y += y;
     }
 
+
+
     @Override
     public void draw(Graphics g) {
 
         // BULLET
-
-        g.setColor(new Color(0, 255, 255));
-        g.fillRect(this.getX(), this.getY(), 14, 14);
+        if (! destroyed) {
+            g.setColor(new Color(0, 255, 255));
+            g.fillRect(this.getX(), this.getY(), 14, 14);
+        }
     }
 
     @Override
     public void selfDestroy() {
-        x = -100;
-        y = -100;
+        destroyed = true;
+    }
+
+    @Override
+    public boolean isDestroyed() {
+        return destroyed;
     }
 }
