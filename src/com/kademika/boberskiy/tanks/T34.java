@@ -6,7 +6,10 @@ import com.kademika.boberskiy.battlefield.Eagle;
 import com.kademika.boberskiy.engine.ActionField;
 import com.kademika.boberskiy.engine.Direction;
 
+import javax.imageio.ImageIO;
 import java.awt.*;
+import java.io.File;
+import java.io.IOException;
 import java.util.NoSuchElementException;
 
 /**
@@ -18,12 +21,28 @@ public class T34 extends AbstractTank {
         super(af, bf);
         tankColor = new Color(128, 255, 0);
         towerColor = new Color(255, 0, 128);
+        try {
+            tankImageLeft = ImageIO.read(new File("C:\\Users\\YB\\IdeaProjects\\TanksGameRefactored\\resources\\magTank_LEFT.png"));
+            tankImageRight = ImageIO.read(new File("C:\\Users\\YB\\IdeaProjects\\TanksGameRefactored\\resources\\magTank_RIGHT.png"));
+            tankImageUp = ImageIO.read(new File("C:\\Users\\YB\\IdeaProjects\\TanksGameRefactored\\resources\\magTank_UP.png"));
+            tankImageDown = ImageIO.read(new File("C:\\Users\\YB\\IdeaProjects\\TanksGameRefactored\\resources\\magTank_DOWN.png"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public T34(ActionField af, BattleField bf, int x, int y, Direction direction) {
         super(af, bf, x, y, direction);
         tankColor = new Color(128, 255, 0);
         towerColor = new Color(255, 0, 128);
+        try {
+            tankImageLeft = ImageIO.read(new File("C:\\Users\\YB\\IdeaProjects\\TanksGameRefactored\\resources\\greenTank_LEFT.png"));
+            tankImageRight = ImageIO.read(new File("C:\\Users\\YB\\IdeaProjects\\TanksGameRefactored\\resources\\greenTank_RIGHT.png"));
+            tankImageUp = ImageIO.read(new File("C:\\Users\\YB\\IdeaProjects\\TanksGameRefactored\\resources\\greenTank_UP.png"));
+            tankImageDown = ImageIO.read(new File("C:\\Users\\YB\\IdeaProjects\\TanksGameRefactored\\resources\\greenTank_DOWN.png"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     private Object[] actions = new Object[]{
@@ -57,4 +76,8 @@ public class T34 extends AbstractTank {
     }
 
 
+    @Override
+    public boolean imageUpdate(Image img, int infoflags, int x, int y, int width, int height) {
+        return false;
+    }
 }

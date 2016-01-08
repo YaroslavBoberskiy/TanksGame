@@ -7,11 +7,12 @@ import com.kademika.boberskiy.engine.Direction;
 import com.kademika.boberskiy.engine.Drawable;
 
 import java.awt.*;
+import java.awt.image.ImageObserver;
 
 /**
  * Created by YB on 26.10.2015.
  */
-public abstract class AbstractTank implements Drawable, Destroyable, Tankable {
+public abstract class AbstractTank implements Drawable, Destroyable, Tankable, ImageObserver {
 
     final private int speed = 10;
     protected int movePath = 1;
@@ -21,6 +22,10 @@ public abstract class AbstractTank implements Drawable, Destroyable, Tankable {
     private boolean destroyed;
     Color tankColor;
     Color towerColor;
+    Image tankImageLeft;
+    Image tankImageRight;
+    Image tankImageUp;
+    Image tankImageDown;
     public BattleField bf;
     private ActionField af;
 
@@ -81,6 +86,22 @@ public abstract class AbstractTank implements Drawable, Destroyable, Tankable {
     public void move() {
     }
 
+    public Image getTankImageLeft() {
+        return tankImageLeft;
+    }
+
+    public Image getTankImageRight() {
+        return tankImageRight;
+    }
+
+    public Image getTankImageUp() {
+        return tankImageUp;
+    }
+
+    public Image getTankImageDown() {
+        return tankImageDown;
+    }
+
     public void updateX(int x) {
         this.x += x;
     }
@@ -102,17 +123,21 @@ public abstract class AbstractTank implements Drawable, Destroyable, Tankable {
     @Override
     public void draw(Graphics g) {
         if (!destroyed) {
-            g.setColor(tankColor);
-            g.fillRect(this.getX(), this.getY(), 64, 64);
-            g.setColor(towerColor);
+            //g.setColor(tankColor);
+            //g.fillRect(this.getX(), this.getY(), 64, 64);
+            //g.setColor(towerColor);
             if (this.getDirection() == Direction.UP) {
-                g.fillRect(this.getX() + 20, this.getY(), 24, 34);
+                //g.fillRect(this.getX() + 20, this.getY(), 24, 34);
+                g.drawImage(this.getTankImageUp(), this.getX(), this.getY(), 64, 64, this);
             } else if (this.getDirection() == Direction.DOWN) {
-                g.fillRect(this.getX() + 20, this.getY() + 30, 24, 34);
+                //g.fillRect(this.getX() + 20, this.getY() + 30, 24, 34);
+                g.drawImage(this.getTankImageDown(), this.getX(), this.getY(), 64, 64, this);
             } else if (this.getDirection() == Direction.LEFT) {
-                g.fillRect(this.getX(), this.getY() + 20, 34, 24);
+                //g.fillRect(this.getX(), this.getY() + 20, 34, 24);
+                g.drawImage(this.getTankImageLeft(), this.getX(), this.getY(), 64, 64, this);
             } else {
-                g.fillRect(this.getX() + 30, this.getY() + 20, 34, 24);
+                //g.fillRect(this.getX() + 30, this.getY() + 20, 34, 24);
+                g.drawImage(this.getTankImageRight(), this.getX(), this.getY(), 64, 64, this);
             }
         }
     }

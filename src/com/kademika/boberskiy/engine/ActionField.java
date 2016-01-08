@@ -41,9 +41,6 @@ public class ActionField extends JPanel {
             }
         }
 
-//        for (Object t : agressor.getTankBehaviorScenario()) {
-//            System.out.println(t.toString());
-//        }
     }
 
     private void processAction(Actions a, AbstractTank tank) throws Exception {

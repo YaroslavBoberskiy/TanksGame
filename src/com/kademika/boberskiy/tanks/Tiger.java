@@ -4,7 +4,10 @@ import com.kademika.boberskiy.battlefield.*;
 import com.kademika.boberskiy.engine.ActionField;
 import com.kademika.boberskiy.engine.Direction;
 
+import javax.imageio.ImageIO;
 import java.awt.*;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 
 /**
@@ -16,6 +19,7 @@ public class Tiger extends AbstractTank {
     private int currentStep = 0;
 
     private ArrayList<Object> tankBehaviorScenario = new ArrayList<Object>();
+
     int x = this.getX() / 64;
     int y = this.getY() / 64;
 
@@ -24,12 +28,28 @@ public class Tiger extends AbstractTank {
         super(af, bf);
         tankColor = new Color(128, 128, 0);
         towerColor = new Color(255, 128, 0);
+        try {
+            tankImageLeft = ImageIO.read(new File("C:\\Users\\YB\\IdeaProjects\\TanksGameRefactored\\resources\\greenTank_LEFT.png"));
+            tankImageRight = ImageIO.read(new File("C:\\Users\\YB\\IdeaProjects\\TanksGameRefactored\\resources\\greenTank_RIGHT.png"));
+            tankImageUp = ImageIO.read(new File("C:\\Users\\YB\\IdeaProjects\\TanksGameRefactored\\resources\\greenTank_UP.png"));
+            tankImageDown = ImageIO.read(new File("C:\\Users\\YB\\IdeaProjects\\TanksGameRefactored\\resources\\greenTank_DOWN.png"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public Tiger(ActionField af, BattleField bf, int x, int y, Direction direction) {
         super(af, bf, x, y, direction);
         tankColor = new Color(128, 128, 0);
         towerColor = new Color(255, 128, 0);
+        try {
+            tankImageLeft = ImageIO.read(new File("C:\\Users\\YB\\IdeaProjects\\TanksGameRefactored\\resources\\greenTank_LEFT.png"));
+            tankImageRight = ImageIO.read(new File("C:\\Users\\YB\\IdeaProjects\\TanksGameRefactored\\resources\\greenTank_RIGHT.png"));
+            tankImageUp = ImageIO.read(new File("C:\\Users\\YB\\IdeaProjects\\TanksGameRefactored\\resources\\greenTank_UP.png"));
+            tankImageDown = ImageIO.read(new File("C:\\Users\\YB\\IdeaProjects\\TanksGameRefactored\\resources\\greenTank_DOWN.png"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -133,4 +153,8 @@ public class Tiger extends AbstractTank {
         return (Actions) tankBehaviorScenario.get(currentStep++);
     }
 
+    @Override
+    public boolean imageUpdate(Image img, int infoflags, int x, int y, int width, int height) {
+        return false;
+    }
 }
