@@ -7,11 +7,11 @@ import java.awt.*;
 /**
  * Created by YB on 26.10.2015.
  */
-public class BattleField implements Drawable {
+public class BattleField {
 
     private final int BF_WIDTH = 592;
     private final int BF_HEIGHT = 592;
-    private final boolean COLORED_MODE = true;
+    private final boolean COLORED_MODE = false;
 
     private String [][] battleFieldMap = {
             {"empty", "brick", "brick", "empty", "rock", "empty", "empty", "empty", "brick"},
@@ -19,7 +19,7 @@ public class BattleField implements Drawable {
             {"empty", "water", "empty", "empty", "empty", "rock", "empty", "empty", "water"},
             {"brick", "brick", "brick", "brick", "brick", "empty", "rock", "brick", "brick"},
             {"empty", "empty", "brick", "brick", "brick", "empty", "empty", "empty", "empty"},
-            {"brick", "empty", "empty", "empty", "empty", "brick", "brick", "empty", "empty"},
+            {"brick", "empty", "empty", "empty", "empty", "brick", "brick", "water", "empty"},
             {"empty", "empty", "water", "brick", "empty", "empty", "brick", "brick", "rock"},
             {"empty", "eagle", "empty", "empty", "brick", "brick", "empty", "empty", "empty"},
             {"brick", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty"},};
@@ -73,10 +73,22 @@ public class BattleField implements Drawable {
         }
     }
 
-    public void drawObjects (Graphics g) {
+    public void drawObjectsBesidesWater (Graphics g) {
         for (int j = 0; j < this.getDimensionY(); j++) {
             for (int k = 0; k < this.getDimensionX(); k++) {
-                battleField[j][k].draw(g);
+                if (!(battleField[j][k] instanceof Water)) {
+                    battleField[j][k].draw(g);
+                }
+            }
+        }
+    }
+
+    public void drawObjectsOfWater (Graphics g) {
+        for (int j = 0; j < this.getDimensionY(); j++) {
+            for (int k = 0; k < this.getDimensionX(); k++) {
+                if (battleField[j][k] instanceof Water) {
+                    battleField[j][k].draw(g);
+                }
             }
         }
     }
@@ -112,11 +124,5 @@ public class BattleField implements Drawable {
     public void destroyObject(int v, int h) {
         battleField[v][h].selfDestroy();
         updateQuadrant(v, h, new Empty(v, h));
-    }
-
-    @Override
-    public void draw(Graphics g) {
-        drawField(g);
-        drawObjects(g);
     }
 }

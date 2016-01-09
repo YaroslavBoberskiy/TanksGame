@@ -2,8 +2,8 @@ package com.kademika.boberskiy.engine;
 
 import com.kademika.boberskiy.battlefield.BattleField;
 import com.kademika.boberskiy.battlefield.BattleFieldAbstractObject;
-import com.kademika.boberskiy.battlefield.Eagle;
 import com.kademika.boberskiy.battlefield.Empty;
+import com.kademika.boberskiy.battlefield.Water;
 import com.kademika.boberskiy.tanks.*;
 import javax.swing.*;
 import java.awt.*;
@@ -20,7 +20,6 @@ public class ActionField extends JPanel {
         defender = new T34(this, battleField);
         agressor = new Tiger(this, battleField, 448, 128, Direction.DOWN);
         bullet = new Bullet(-100, -100, Direction.NONE);
-
         JFrame frame = new JFrame("BATTLE FIELD, DAY 7");
         frame.setLocation(750, 150);
         frame.setMinimumSize(new Dimension(battleField.getBfWidth(), battleField.getBfHeight() + 22));
@@ -36,6 +35,7 @@ public class ActionField extends JPanel {
         while (true) {
             if (!agressor.isDestroyed() && !defender.isDestroyed() && battleField.scanQuadrant(7,1).getClass().getName().contains("Eagle")) {
                 processAction(agressor.setUp(), agressor);
+                processAction(defender.setUp(), defender);
             } else {
                 break;
             }
@@ -87,7 +87,8 @@ public class ActionField extends JPanel {
                 }
 
                 BattleFieldAbstractObject bfAbstrObject = battleField.scanQuadrant(y, x);
-                if (!(bfAbstrObject instanceof Empty) && !bfAbstrObject.isDestroyed()) {
+
+                if (!(bfAbstrObject instanceof Empty) && !(bfAbstrObject instanceof Water) && !bfAbstrObject.isDestroyed()) {
                     return;
                 }
 
@@ -189,9 +190,11 @@ public class ActionField extends JPanel {
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        battleField.draw(g);
+        battleField.drawField(g);
+        battleField.drawObjectsBesidesWater(g);
         defender.draw(g);
         agressor.draw(g);
         bullet.draw(g);
+        battleField.drawObjectsOfWater(g);
     }
 }

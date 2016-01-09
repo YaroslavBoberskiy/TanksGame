@@ -4,6 +4,7 @@ import com.kademika.boberskiy.engine.Destroyable;
 import com.kademika.boberskiy.engine.Drawable;
 
 import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.awt.image.ImageObserver;
 
 /**
@@ -12,7 +13,7 @@ import java.awt.image.ImageObserver;
 public class BattleFieldAbstractObject implements Drawable, Destroyable, ImageObserver {
 
     Color objectColor;
-    Image objectImage;
+    BufferedImage objectImage;
     int objXCoordinate;
     int objYCoordinate;
     boolean destroyed;
@@ -52,8 +53,8 @@ public class BattleFieldAbstractObject implements Drawable, Destroyable, ImageOb
     @Override
     public void draw(Graphics g) {
         if (!destroyed) {
-            g.setColor(this.getObjectColor());
-            g.fillRect(this.getObjXCoordinate() * 64, this.getObjYCoordinate() * 64, 64, 64);
+            //g.setColor(this.getObjectColor());
+            //g.fillRect(this.getObjXCoordinate() * 64, this.getObjYCoordinate() * 64, 64, 64);
             g.drawImage(this.getObjectImage(), this.getObjXCoordinate() * 64, this.getObjYCoordinate() * 64, 64, 64, this);
         }
     }
