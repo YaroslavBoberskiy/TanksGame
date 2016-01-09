@@ -6,14 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fbbfd55e-1a03-467d-9572-c1039ebd580f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/kademika/boberskiy/engine/ActionField.java" afterPath="$PROJECT_DIR$/src/com/kademika/boberskiy/engine/ActionField.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/kademika/boberskiy/battlefield/BattleField.java" afterPath="$PROJECT_DIR$/src/com/kademika/boberskiy/battlefield/BattleField.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/kademika/boberskiy/battlefield/BattleFieldAbstractObject.java" afterPath="$PROJECT_DIR$/src/com/kademika/boberskiy/battlefield/BattleFieldAbstractObject.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/kademika/boberskiy/tanks/T34.java" afterPath="$PROJECT_DIR$/src/com/kademika/boberskiy/tanks/T34.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/kademika/boberskiy/battlefield/Water.java" afterPath="$PROJECT_DIR$/src/com/kademika/boberskiy/battlefield/Water.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="fbbfd55e-1a03-467d-9572-c1039ebd580f" name="Default" comment="" />
     <ignored path=".idea/dataSources.local.xml" />
     <manually-removed-from-ignored>
       <directory path="$PROJECT_DIR$/out/" />
@@ -687,7 +680,7 @@
       <workItem from="1451477101963" duration="6585000" />
       <workItem from="1451731156719" duration="7156000" />
       <workItem from="1452204935166" duration="10624000" />
-      <workItem from="1452365486674" duration="10301000" />
+      <workItem from="1452365486674" duration="10328000" />
     </task>
     <task id="LOCAL-00001" summary="JAR file was created">
       <created>1445854925899</created>
@@ -737,11 +730,17 @@
       <option name="project" value="LOCAL" />
       <updated>1452272824226</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Tanks game with transparent water">
+      <created>1452377677057</created>
+      <option name="number" value="00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1452377677057</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="157684000" />
+    <option name="totallyTimeSpent" value="157711000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -798,7 +797,8 @@
     <MESSAGE value="Refactoring 1" />
     <MESSAGE value="Look for Eagle and destroy it!" />
     <MESSAGE value="Tanks game with images" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tanks game with images" />
+    <MESSAGE value="Tanks game with transparent water" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tanks game with transparent water" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
