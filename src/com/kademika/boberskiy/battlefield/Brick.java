@@ -15,7 +15,7 @@ public class Brick extends BattleFieldAbstractObject {
         super(x, y);
         objectColor = new Color(253, 116, 66);
         try {
-            objectImage = ImageIO.read(new File("C:\\Users\\YB\\IdeaProjects\\TanksGameRefactored\\resources\\Brick.png"));
+            objectImage = ImageIO.read(new File("resources/Brick.png"));
         } catch (IOException e) {
             e.printStackTrace();
         }

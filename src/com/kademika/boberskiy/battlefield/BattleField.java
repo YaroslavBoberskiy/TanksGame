@@ -1,7 +1,4 @@
 package com.kademika.boberskiy.battlefield;
-
-import com.kademika.boberskiy.engine.Drawable;
-
 import java.awt.*;
 
 /**
@@ -11,18 +8,20 @@ public class BattleField {
 
     private final int BF_WIDTH = 592;
     private final int BF_HEIGHT = 592;
+    private final int BF_MIN_COORDINATE = 0;
+    private final int BF_MAX_COORDINATE = 576;
     private final boolean COLORED_MODE = false;
 
-    private String [][] battleFieldMap = {
-            {"empty", "brick", "brick", "empty", "rock", "empty", "empty", "empty", "brick"},
-            {"brick", "brick", "brick", "empty", "empty", "empty", "brick", "empty", "brick"},
-            {"empty", "water", "empty", "empty", "empty", "rock", "empty", "empty", "water"},
-            {"brick", "brick", "brick", "brick", "brick", "empty", "rock", "brick", "brick"},
-            {"empty", "empty", "brick", "brick", "brick", "empty", "empty", "empty", "empty"},
-            {"brick", "empty", "empty", "empty", "empty", "brick", "brick", "water", "empty"},
-            {"empty", "empty", "water", "brick", "empty", "empty", "brick", "brick", "rock"},
-            {"empty", "eagle", "empty", "empty", "brick", "brick", "empty", "empty", "empty"},
-            {"brick", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty"},};
+    private String[][] battleFieldMap = {
+            {"empty", "empty", "empty", "empty", "rock", "empty", "empty", "empty", "empty"},
+            {"empty", "water", "water", "empty", "rock", "empty", "water", "water", "brick"},
+            {"brick", "brick", "brick", "brick", "brick", "brick", "brick", "brick", "brick"},
+            {"empty", "empty", "water", "water", "brick", "water", "water", "empty", "empty"},
+            {"brick", "brick", "brick", "brick", "brick", "brick", "brick", "brick", "brick"},
+            {"rock", "empty", "rock", "empty", "rock", "empty", "rock", "empty", "rock"},
+            {"empty", "brick", "empty", "empty", "empty", "empty", "empty", "brick", "empty"},
+            {"empty", "brick", "empty", "brick", "brick", "brick", "empty", "brick", "empty"},
+            {"empty", "brick", "empty", "brick", "eagle", "brick", "empty", "brick", "empty"}};
 
     private BattleFieldAbstractObject[][] battleField = new BattleFieldAbstractObject[9][9];
 
@@ -30,7 +29,7 @@ public class BattleField {
         createBattleField();
     }
 
-    public void drawField (Graphics g) {
+    public void drawField(Graphics g) {
         int i = 0;
         Color cc;
         for (int v = 0; v < 9; v++) {
@@ -51,7 +50,7 @@ public class BattleField {
         }
     }
 
-    public void createBattleField () {
+    public void createBattleField() {
         if (battleFieldMap != null && battleField != null) {
             for (int j = 0; j < this.getDimensionY(); j++) {
                 for (int k = 0; k < this.getDimensionX(); k++) {
@@ -65,7 +64,7 @@ public class BattleField {
                         battleField[j][k] = new Eagle(j, k);
                     } else if (battleFieldMap[j][k].equals("rock")) {
                         battleField[j][k] = new Rock(j, k);
-                    }else {
+                    } else {
                         throw new IllegalArgumentException();
                     }
                 }
@@ -73,7 +72,7 @@ public class BattleField {
         }
     }
 
-    public void drawObjectsBesidesWater (Graphics g) {
+    public void drawObjectsBesidesWater(Graphics g) {
         for (int j = 0; j < this.getDimensionY(); j++) {
             for (int k = 0; k < this.getDimensionX(); k++) {
                 if (!(battleField[j][k] instanceof Water)) {
@@ -83,7 +82,7 @@ public class BattleField {
         }
     }
 
-    public void drawObjectsOfWater (Graphics g) {
+    public void drawObjectsOfWater(Graphics g) {
         for (int j = 0; j < this.getDimensionY(); j++) {
             for (int k = 0; k < this.getDimensionX(); k++) {
                 if (battleField[j][k] instanceof Water) {
@@ -117,12 +116,18 @@ public class BattleField {
         return BF_HEIGHT;
     }
 
-    public BattleFieldAbstractObject[][] getBattleField() {
-        return battleField;
+    public int getBF_MIN_COORDINATE() {
+        return BF_MIN_COORDINATE;
+    }
+
+    public int getBF_MAX_COORDINATE() {
+        return BF_MAX_COORDINATE;
     }
 
     public void destroyObject(int v, int h) {
-        battleField[v][h].selfDestroy();
-        updateQuadrant(v, h, new Empty(v, h));
+        if (!battleField[v][h].getClass().getName().contains("Rock")) {
+            battleField[v][h].selfDestroy();
+            updateQuadrant(v, h, new Empty(v, h));
+        }
     }
 }

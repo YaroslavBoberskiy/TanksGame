@@ -18,7 +18,7 @@ public class Tiger extends AbstractTank {
     private int armor = 1;
     private int currentStep = 0;
 
-    private ArrayList<Object> tankBehaviorScenario = new ArrayList<Object>();
+    public ArrayList<Object> tankBehaviorScenario = new ArrayList<Object>();
 
     int x = this.getX() / 64;
     int y = this.getY() / 64;
@@ -29,10 +29,10 @@ public class Tiger extends AbstractTank {
         tankColor = new Color(128, 128, 0);
         towerColor = new Color(255, 128, 0);
         try {
-            tankImageLeft = ImageIO.read(new File("C:\\Users\\YB\\IdeaProjects\\TanksGameRefactored\\resources\\greenTank_LEFT.png"));
-            tankImageRight = ImageIO.read(new File("C:\\Users\\YB\\IdeaProjects\\TanksGameRefactored\\resources\\greenTank_RIGHT.png"));
-            tankImageUp = ImageIO.read(new File("C:\\Users\\YB\\IdeaProjects\\TanksGameRefactored\\resources\\greenTank_UP.png"));
-            tankImageDown = ImageIO.read(new File("C:\\Users\\YB\\IdeaProjects\\TanksGameRefactored\\resources\\greenTank_DOWN.png"));
+            tankImageLeft = ImageIO.read(new File("resources/greenTank_LEFT.png"));
+            tankImageRight = ImageIO.read(new File("resources/greenTank_RIGHT.png"));
+            tankImageUp = ImageIO.read(new File("resources/greenTank_UP.png"));
+            tankImageDown = ImageIO.read(new File("resources/greenTank_DOWN.png"));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -43,10 +43,10 @@ public class Tiger extends AbstractTank {
         tankColor = new Color(128, 128, 0);
         towerColor = new Color(255, 128, 0);
         try {
-            tankImageLeft = ImageIO.read(new File("C:\\Users\\YB\\IdeaProjects\\TanksGameRefactored\\resources\\greenTank_LEFT.png"));
-            tankImageRight = ImageIO.read(new File("C:\\Users\\YB\\IdeaProjects\\TanksGameRefactored\\resources\\greenTank_RIGHT.png"));
-            tankImageUp = ImageIO.read(new File("C:\\Users\\YB\\IdeaProjects\\TanksGameRefactored\\resources\\greenTank_UP.png"));
-            tankImageDown = ImageIO.read(new File("C:\\Users\\YB\\IdeaProjects\\TanksGameRefactored\\resources\\greenTank_DOWN.png"));
+            tankImageLeft = ImageIO.read(new File("resources/greenTank_LEFT.png"));
+            tankImageRight = ImageIO.read(new File("resources/greenTank_RIGHT.png"));
+            tankImageUp = ImageIO.read(new File("resources/greenTank_UP.png"));
+            tankImageDown = ImageIO.read(new File("resources/greenTank_DOWN.png"));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -66,17 +66,23 @@ public class Tiger extends AbstractTank {
         int tankCoordinateX = this.getX() / 64;
         int tankCoordinateY = this.getY() / 64;
 
-        while (rotateLocator(tankCoordinateY, tankCoordinateX).equals(Direction.NONE)) {
-            tankBehaviorScenario.add(Actions.FIRE);
-            tankBehaviorScenario.add(Actions.MOVE);
-            tankCoordinateY++;
-            if (!rotateLocator(tankCoordinateY, tankCoordinateX).equals(Direction.NONE)) {
-                tankBehaviorScenario.add(rotateLocator(tankCoordinateY, tankCoordinateX));
-                for (int i = 0; i < scanFrontPath(rotateLocator(tankCoordinateY, tankCoordinateX),
-                        tankCoordinateY, tankCoordinateX).substring(0, scanFrontPath(rotateLocator(tankCoordinateY, tankCoordinateX),
-                        tankCoordinateY, tankCoordinateX).indexOf("H")).length(); i++) {
-                    tankBehaviorScenario.add(Actions.FIRE);
-                }
+//        tankBehaviorScenario.add(Actions.FIRE);
+//        tankBehaviorScenario.add(Actions.MOVE);
+//        tankCoordinateY++;
+//
+//        if (this.getObjectInFrontOfTank() instanceof Rock && getDirection() == Direction.DOWN) {
+//            turn(Direction.LEFT);
+//            if () {
+//
+//            }
+//        }
+
+        if (!rotateLocator(tankCoordinateY, tankCoordinateX).equals(Direction.NONE) && !scanFrontPath(getDirection(), tankCoordinateY, tankCoordinateX).contains("R")) {
+            tankBehaviorScenario.add(rotateLocator(tankCoordinateY, tankCoordinateX));
+            for (int i = 0; i < scanFrontPath(rotateLocator(tankCoordinateY, tankCoordinateX),
+                    tankCoordinateY, tankCoordinateX).substring(0, scanFrontPath(rotateLocator(tankCoordinateY, tankCoordinateX),
+                    tankCoordinateY, tankCoordinateX).indexOf("H")).length(); i++) {
+                tankBehaviorScenario.add(Actions.FIRE);
             }
         }
     }

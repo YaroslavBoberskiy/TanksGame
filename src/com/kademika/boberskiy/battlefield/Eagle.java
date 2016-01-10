@@ -14,7 +14,7 @@ public class Eagle extends BattleFieldAbstractObject {
         super(x, y);
         objectColor = new Color(255, 200, 0);
         try {
-            objectImage = ImageIO.read(new File("C:\\Users\\YB\\IdeaProjects\\TanksGameRefactored\\resources\\eagle.png"));
+            objectImage = ImageIO.read(new File("resources/eagle.png"));
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -22,10 +22,10 @@ public class T34 extends AbstractTank {
         tankColor = new Color(128, 255, 0);
         towerColor = new Color(255, 0, 128);
         try {
-            tankImageLeft = ImageIO.read(new File("C:\\Users\\YB\\IdeaProjects\\TanksGameRefactored\\resources\\magTank_LEFT.png"));
-            tankImageRight = ImageIO.read(new File("C:\\Users\\YB\\IdeaProjects\\TanksGameRefactored\\resources\\magTank_RIGHT.png"));
-            tankImageUp = ImageIO.read(new File("C:\\Users\\YB\\IdeaProjects\\TanksGameRefactored\\resources\\magTank_UP.png"));
-            tankImageDown = ImageIO.read(new File("C:\\Users\\YB\\IdeaProjects\\TanksGameRefactored\\resources\\magTank_DOWN.png"));
+            tankImageLeft = ImageIO.read(new File("resources/magTank_LEFT.png"));
+            tankImageRight = ImageIO.read(new File("resources/magTank_RIGHT.png"));
+            tankImageUp = ImageIO.read(new File("resources/magTank_UP.png"));
+            tankImageDown = ImageIO.read(new File("resources/magTank_DOWN.png"));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -36,10 +36,10 @@ public class T34 extends AbstractTank {
         tankColor = new Color(128, 255, 0);
         towerColor = new Color(255, 0, 128);
         try {
-            tankImageLeft = ImageIO.read(new File("C:\\Users\\YB\\IdeaProjects\\TanksGameRefactored\\resources\\greenTank_LEFT.png"));
-            tankImageRight = ImageIO.read(new File("C:\\Users\\YB\\IdeaProjects\\TanksGameRefactored\\resources\\greenTank_RIGHT.png"));
-            tankImageUp = ImageIO.read(new File("C:\\Users\\YB\\IdeaProjects\\TanksGameRefactored\\resources\\greenTank_UP.png"));
-            tankImageDown = ImageIO.read(new File("C:\\Users\\YB\\IdeaProjects\\TanksGameRefactored\\resources\\greenTank_DOWN.png"));
+            tankImageLeft = ImageIO.read(new File("resources/magTank_LEFT.png"));
+            tankImageRight = ImageIO.read(new File("resources/magTank_RIGHT.png"));
+            tankImageUp = ImageIO.read(new File("resources/magTank_UP.png"));
+            tankImageDown = ImageIO.read(new File("resources/magTank_DOWN.png"));
         } catch (IOException e) {
             e.printStackTrace();
         }

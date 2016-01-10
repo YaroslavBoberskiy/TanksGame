@@ -16,7 +16,7 @@ public class Rock extends BattleFieldAbstractObject {
         super(x, y);
         objectColor = rockColor;
         try {
-            objectImage = ImageIO.read(new File("C:\\Users\\YB\\IdeaProjects\\TanksGameRefactored\\resources\\Rock.png"));
+            objectImage = ImageIO.read(new File("resources/Rock.png"));
         } catch (IOException e) {
             e.printStackTrace();
         }

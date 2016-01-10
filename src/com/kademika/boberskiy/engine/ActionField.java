@@ -1,10 +1,8 @@
 package com.kademika.boberskiy.engine;
 
-import com.kademika.boberskiy.battlefield.BattleField;
-import com.kademika.boberskiy.battlefield.BattleFieldAbstractObject;
-import com.kademika.boberskiy.battlefield.Empty;
-import com.kademika.boberskiy.battlefield.Water;
+import com.kademika.boberskiy.battlefield.*;
 import com.kademika.boberskiy.tanks.*;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -17,9 +15,9 @@ public class ActionField extends JPanel {
 
     public ActionField() throws Exception {
         battleField = new BattleField();
-        defender = new T34(this, battleField);
-        agressor = new Tiger(this, battleField, 448, 128, Direction.DOWN);
-        bullet = new Bullet(-100, -100, Direction.NONE);
+        defender = new T34(this, battleField, 0, 512, Direction.UP);
+        agressor = new Tiger(this, battleField, 384, 0, Direction.DOWN);
+        bullet = new Bullet(-1000, -1000, Direction.NONE);
         JFrame frame = new JFrame("BATTLE FIELD, DAY 7");
         frame.setLocation(750, 150);
         frame.setMinimumSize(new Dimension(battleField.getBfWidth(), battleField.getBfHeight() + 22));
@@ -32,10 +30,10 @@ public class ActionField extends JPanel {
     void runTheGame() throws Exception {
 
         agressor.destroyEagleScenario();
+
         while (true) {
-            if (!agressor.isDestroyed() && !defender.isDestroyed() && battleField.scanQuadrant(7,1).getClass().getName().contains("Eagle")) {
+            if (!agressor.isDestroyed() && !defender.isDestroyed() && battleField.scanQuadrant(8,4).getClass().getName().contains("Eagle")) {
                 processAction(agressor.setUp(), agressor);
-                processAction(defender.setUp(), defender);
             } else {
                 break;
             }
@@ -76,20 +74,18 @@ public class ActionField extends JPanel {
                     return;
                 }
 
+                if (!(tank.getObjectInFrontOfTank() instanceof Empty) && !(tank.getObjectInFrontOfTank() instanceof Water) && !(tank.getObjectInFrontOfTank().isDestroyed())) {
+                    return;
+                }
+
                 if (direction == Direction.UP) {
-                    y++;
-                } else if (direction == Direction.DOWN) {
                     y--;
+                } else if (direction == Direction.DOWN) {
+                    y++;
                 } else if (direction == Direction.RIGHT) {
                     x++;
                 } else if (direction == Direction.LEFT) {
                     x--;
-                }
-
-                BattleFieldAbstractObject bfAbstrObject = battleField.scanQuadrant(y, x);
-
-                if (!(bfAbstrObject instanceof Empty) && !(bfAbstrObject instanceof Water) && !bfAbstrObject.isDestroyed()) {
-                    return;
                 }
 
                 while (covered < 64) {
@@ -150,7 +146,7 @@ public class ActionField extends JPanel {
 
         if (y >= 0 && y < 9 && x >= 0 && x < 9) {
 
-            if (!battleField.scanQuadrant(y, x).isDestroyed() && !(battleField.scanQuadrant(y, x) instanceof Empty)) {
+            if (!battleField.scanQuadrant(y, x).isDestroyed() && !(battleField.scanQuadrant(y, x) instanceof Empty) && !(battleField.scanQuadrant(y, x) instanceof Water)) {
                 battleField.destroyObject(y, x);
                 return true;
             }
@@ -183,8 +179,8 @@ public class ActionField extends JPanel {
         return false;
     }
 
-    String getQuadrant(int x, int y) {
-        return y / 64 + "_" + x / 64;
+    String getQuadrant(int y, int x) {
+        return x / 64 + "_" + y / 64;
     }
 
     @Override
@@ -194,7 +190,7 @@ public class ActionField extends JPanel {
         battleField.drawObjectsBesidesWater(g);
         defender.draw(g);
         agressor.draw(g);
-        bullet.draw(g);
         battleField.drawObjectsOfWater(g);
+        bullet.draw(g);
     }
 }

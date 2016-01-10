@@ -14,7 +14,7 @@ public class Empty extends BattleFieldAbstractObject {
         super(x, y);
         objectColor = new Color(255, 255, 255, 0);
         try {
-            objectImage = ImageIO.read(new File("C:\\Users\\YB\\IdeaProjects\\TanksGameRefactored\\resources\\Empty.png"));
+            objectImage = ImageIO.read(new File("resources/Empty.png"));
         } catch (IOException e) {
             e.printStackTrace();
         }

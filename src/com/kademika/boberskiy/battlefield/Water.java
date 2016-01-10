@@ -15,7 +15,7 @@ public class Water extends BattleFieldAbstractObject {
         super(x, y);
         objectColor = new Color(0, 150, 255);
         try {
-            objectImage = ImageIO.read(new File("C:\\Users\\YB\\IdeaProjects\\TanksGameRefactored\\resources\\Water.png"));
+            objectImage = ImageIO.read(new File("resources/Water.png"));
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -25,6 +25,5 @@ public class Water extends BattleFieldAbstractObject {
         g2d.setComposite(AlphaComposite.SrcOver.derive(0.5f));
         g2d.drawImage(objectImage,0,0,null);
         objectImage=tmpImg;
-
     }
 }
