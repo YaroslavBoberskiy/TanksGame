@@ -1,6 +1,8 @@
 package com.kademika.boberskiy.engine;
 
-import com.kademika.boberskiy.battlefield.*;
+import com.kademika.boberskiy.battlefield.BattleField;
+import com.kademika.boberskiy.battlefield.Empty;
+import com.kademika.boberskiy.battlefield.Water;
 import com.kademika.boberskiy.tanks.*;
 
 import javax.swing.*;
@@ -16,7 +18,7 @@ public class ActionField extends JPanel {
     public ActionField() throws Exception {
         battleField = new BattleField();
         defender = new T34(this, battleField, 0, 512, Direction.UP);
-        agressor = new Tiger(this, battleField, 384, 0, Direction.DOWN);
+        agressor = new Tiger(this, battleField, 512, 0, Direction.DOWN);
         bullet = new Bullet(-1000, -1000, Direction.NONE);
         JFrame frame = new JFrame("BATTLE FIELD, DAY 7");
         frame.setLocation(750, 150);
@@ -32,7 +34,7 @@ public class ActionField extends JPanel {
         agressor.destroyEagleScenario();
 
         while (true) {
-            if (!agressor.isDestroyed() && !defender.isDestroyed() && battleField.scanQuadrant(8,4).getClass().getName().contains("Eagle")) {
+            if (!agressor.isDestroyed() && !defender.isDestroyed() && battleField.scanQuadrant(8, 4).getClass().getName().contains("Eagle")) {
                 processAction(agressor.setUp(), agressor);
             } else {
                 break;
@@ -74,7 +76,9 @@ public class ActionField extends JPanel {
                     return;
                 }
 
-                if (!(tank.getObjectInFrontOfTank() instanceof Empty) && !(tank.getObjectInFrontOfTank() instanceof Water) && !(tank.getObjectInFrontOfTank().isDestroyed())) {
+                if (!(tank.getObjectInFrontOfTank(tank.getTankYQuadrant(), tank.getTankXQuadrant()) instanceof Empty)
+                        && !(tank.getObjectInFrontOfTank(tank.getTankYQuadrant(), tank.getTankXQuadrant()) instanceof Water)
+                        && !(tank.getObjectInFrontOfTank(tank.getTankYQuadrant(), tank.getTankXQuadrant()).isDestroyed())) {
                     return;
                 }
 

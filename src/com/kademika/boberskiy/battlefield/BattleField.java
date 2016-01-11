@@ -18,7 +18,7 @@ public class BattleField {
             {"brick", "brick", "brick", "brick", "brick", "brick", "brick", "brick", "brick"},
             {"empty", "empty", "water", "water", "brick", "water", "water", "empty", "empty"},
             {"brick", "brick", "brick", "brick", "brick", "brick", "brick", "brick", "brick"},
-            {"rock", "empty", "rock", "empty", "rock", "empty", "rock", "empty", "rock"},
+            {"rock", "empty", "rock", "empty", "rock", "empty", "rock", "rock", "rock"},
             {"empty", "brick", "empty", "empty", "empty", "empty", "empty", "brick", "empty"},
             {"empty", "brick", "empty", "brick", "brick", "brick", "empty", "brick", "empty"},
             {"empty", "brick", "empty", "brick", "eagle", "brick", "empty", "brick", "empty"}};

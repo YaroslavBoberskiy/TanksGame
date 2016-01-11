@@ -17,6 +17,8 @@ public abstract class AbstractTank implements Drawable, Destroyable, Tankable, I
     protected int movePath = 1;
     private int x;
     private int y;
+    private int tankXQuadrant;
+    private int tankYQuadrant;
     private Direction direction;
     private boolean destroyed;
     private BattleFieldAbstractObject bfObject;
@@ -82,18 +84,18 @@ public abstract class AbstractTank implements Drawable, Destroyable, Tankable, I
         return new Bullet(bulletX, bulletY, direction);
     }
 
-    public BattleFieldAbstractObject getObjectInFrontOfTank () {
+    public BattleFieldAbstractObject getObjectInFrontOfTank (int y, int x) {
 
-        if (direction == Direction.DOWN && y/64 < 8) {
-            bfObject = bf.scanQuadrant((y/64)+1, x/64);
-        } else if (direction == Direction.UP && y/64 > 0) {
-            bfObject = bf.scanQuadrant((y/64)-1, x/64);
-        } else if (direction == Direction.LEFT && x/64 > 0) {
-            bfObject = bf.scanQuadrant(y/64, (x/64)-1);
-        } else if (direction == Direction.RIGHT && x/64 < 8) {
-            bfObject = bf.scanQuadrant(y/64, (x/64)+1);
+        if (direction == Direction.DOWN && getTankYQuadrant() < 8) {
+            bfObject = bf.scanQuadrant(y+1, x);
+        } else if (direction == Direction.UP && y > 0) {
+            bfObject = bf.scanQuadrant(y-1, x);
+        } else if (direction == Direction.LEFT && x > 0) {
+            bfObject = bf.scanQuadrant(y, x-1);
+        } else if (direction == Direction.RIGHT && x < 8) {
+            bfObject = bf.scanQuadrant(y, x+1);
         } else {
-            bfObject = bf.scanQuadrant(y/64, x/64);
+            bfObject = bf.scanQuadrant(y, x);
         }
         return bfObject;
     }
@@ -115,6 +117,14 @@ public abstract class AbstractTank implements Drawable, Destroyable, Tankable, I
 
     public Image getTankImageDown() {
         return tankImageDown;
+    }
+
+    public int getTankXQuadrant() {
+        return this.getX()/64;
+    }
+
+    public int getTankYQuadrant() {
+        return this.getY()/64;
     }
 
     public void updateX(int x) {

@@ -63,38 +63,78 @@ public class Tiger extends AbstractTank {
 
     public void destroyEagleScenario() {
 
-        int tankCoordinateX = this.getX() / 64;
-        int tankCoordinateY = this.getY() / 64;
+        int tankCoordinateX = x;
+        int tankCoordinateY = y;
+        Direction direction = getDirection();
+        boolean fireEmplacementCheck = false;
 
-//        tankBehaviorScenario.add(Actions.FIRE);
-//        tankBehaviorScenario.add(Actions.MOVE);
-//        tankCoordinateY++;
-//
-//        if (this.getObjectInFrontOfTank() instanceof Rock && getDirection() == Direction.DOWN) {
-//            turn(Direction.LEFT);
-//            if () {
-//
-//            }
-//        }
 
-        if (!rotateLocator(tankCoordinateY, tankCoordinateX).equals(Direction.NONE) && !scanFrontPath(getDirection(), tankCoordinateY, tankCoordinateX).contains("R")) {
-            tankBehaviorScenario.add(rotateLocator(tankCoordinateY, tankCoordinateX));
-            for (int i = 0; i < scanFrontPath(rotateLocator(tankCoordinateY, tankCoordinateX),
-                    tankCoordinateY, tankCoordinateX).substring(0, scanFrontPath(rotateLocator(tankCoordinateY, tankCoordinateX),
-                    tankCoordinateY, tankCoordinateX).indexOf("H")).length(); i++) {
-                tankBehaviorScenario.add(Actions.FIRE);
+        while (fireEmplacementCheck == false) {
+            if (tankCoordinateY >= 0 && tankCoordinateX >= 0 && tankCoordinateY <= 8 && tankCoordinateX <= 8) {
+
+                fireEmplacementCheck = fireEmplacementCheck(tankCoordinateY, tankCoordinateX);
+
+                if (isPathClearToMoveDown(tankCoordinateY, tankCoordinateX) == true) {
+                    System.out.println("Path down towards Eagle is clear");
+                    tankBehaviorScenario.add(Direction.DOWN);
+                    tankBehaviorScenario.add(Actions.FIRE);
+                    tankBehaviorScenario.add(Actions.MOVE);
+                    direction = Direction.DOWN;
+                    tankCoordinateY++;
+                    fireEmplacementCheck = fireEmplacementCheck(tankCoordinateY, tankCoordinateX);
+                } else {
+                    if (!(getObjectInFrontOfTank(tankCoordinateY, tankCoordinateX) instanceof Rock)) {
+                        tankBehaviorScenario.add(Direction.DOWN);
+                        tankBehaviorScenario.add(Actions.FIRE);
+                        tankBehaviorScenario.add(Actions.MOVE);
+                        direction = Direction.DOWN;
+                        tankCoordinateY++;
+                        fireEmplacementCheck = fireEmplacementCheck(tankCoordinateY, tankCoordinateX);
+                    } else if (getObjectInFrontOfTank(tankCoordinateY, tankCoordinateX) instanceof Rock) {
+                        tankBehaviorScenario.add(Direction.LEFT);
+                        tankBehaviorScenario.add(Actions.FIRE);
+                        tankBehaviorScenario.add(Actions.MOVE);
+                        direction = Direction.LEFT;
+                        tankCoordinateX--;
+                        fireEmplacementCheck = fireEmplacementCheck(tankCoordinateY, tankCoordinateX);
+                    }
+                }
             }
         }
     }
 
-    public Direction rotateLocator(int y, int x) {
-        if (scanFrontPath(Direction.UP, y, x).contains("H")) {
+    public boolean isPathClearToMoveDown(int tankCoordinateY, int tankCoordinateX) {
+        if (!scanFrontPath(Direction.DOWN, tankCoordinateY, tankCoordinateX).contains("R") &&
+                scanFrontPath(Direction.DOWN, tankCoordinateY, tankCoordinateX).length() > 1) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean fireEmplacementCheck(int tankCoordinateY, int tankCoordinateX) {
+        if (!lookForClearPathToEagle(tankCoordinateY, tankCoordinateX).equals(Direction.NONE)) {
+            tankBehaviorScenario.add(lookForClearPathToEagle(tankCoordinateY, tankCoordinateX));
+            for (int i = 0; i < scanFrontPath(lookForClearPathToEagle(tankCoordinateY, tankCoordinateX),
+                    tankCoordinateY, tankCoordinateX).substring(0, scanFrontPath(lookForClearPathToEagle(tankCoordinateY, tankCoordinateX),
+                    tankCoordinateY, tankCoordinateX).indexOf("H")).length(); i++) {
+                tankBehaviorScenario.add(Actions.FIRE);
+            }
+            System.out.println("Clear Path To Eagle Found");
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public Direction lookForClearPathToEagle(int y, int x) {
+        if (scanFrontPath(Direction.UP, y, x).contains("H") && !scanFrontPath(Direction.UP, y, x).contains("R")) {
             return Direction.UP;
-        } else if (scanFrontPath(Direction.RIGHT, y, x).contains("H")) {
+        } else if (scanFrontPath(Direction.RIGHT, y, x).contains("H") && !scanFrontPath(Direction.RIGHT, y, x).contains("R")) {
             return Direction.RIGHT;
-        } else if (scanFrontPath(Direction.DOWN, y, x).contains("H")) {
+        } else if (scanFrontPath(Direction.DOWN, y, x).contains("H") && !scanFrontPath(Direction.DOWN, y, x).contains("R")) {
             return Direction.DOWN;
-        } else if (scanFrontPath(Direction.LEFT, y, x).contains("H")) {
+        } else if (scanFrontPath(Direction.LEFT, y, x).contains("H") && !scanFrontPath(Direction.LEFT, y, x).contains("R")) {
             return Direction.LEFT;
         } else {
             return Direction.NONE;
