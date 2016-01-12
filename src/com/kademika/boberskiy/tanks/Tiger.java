@@ -23,9 +23,12 @@ public class Tiger extends AbstractTank {
     int x = this.getX() / 64;
     int y = this.getY() / 64;
 
+    private T34 defender;
 
-    public Tiger(ActionField af, BattleField bf) {
-        super(af, bf);
+
+    public Tiger(ActionField af, BattleField bf, T34 defender) {
+        super(af, bf, defender);
+        this.defender = defender;
         tankColor = new Color(128, 128, 0);
         towerColor = new Color(255, 128, 0);
         try {
@@ -38,8 +41,9 @@ public class Tiger extends AbstractTank {
         }
     }
 
-    public Tiger(ActionField af, BattleField bf, int x, int y, Direction direction) {
-        super(af, bf, x, y, direction);
+    public Tiger(ActionField af, BattleField bf, T34 defender, int x, int y, Direction direction) {
+        super(af, bf, defender, x, y, direction);
+        this.defender = defender;
         tankColor = new Color(128, 128, 0);
         towerColor = new Color(255, 128, 0);
         try {
@@ -97,7 +101,26 @@ public class Tiger extends AbstractTank {
     }
 
     public void destroyDefenderScenario() {
+        int tankCoordinateX = x;
+        int tankCoordinateY = y;
+        Direction direction = getDirection();
 
+        System.out.println(this.defender.getY() + "--" + this.defender.getX());
+
+        while (spottedTheEnemy(tankCoordinateY, tankCoordinateX) == false) {
+            if (tankCoordinateY >= 0 && tankCoordinateX >= 0 && tankCoordinateY <= 8 && tankCoordinateX <= 8) {
+                if (spottedTheEnemy(tankCoordinateY, tankCoordinateX) == false) {
+                    System.out.println("false spot");
+                    addMoveDownActions();
+                    direction = Direction.DOWN;
+                    tankCoordinateY++;
+                    System.out.println(tankCoordinateY + " - " + tankCoordinateX);
+                } else if (spottedTheEnemy(tankCoordinateY, tankCoordinateX) == true) {
+                    System.out.println("true spot");
+                    spottedTheEnemy(tankCoordinateY, tankCoordinateX);
+                }
+            }
+        }
     }
 
     public void addMoveDownActions() {
@@ -116,6 +139,34 @@ public class Tiger extends AbstractTank {
         tankBehaviorScenario.add(Direction.RIGHT);
         tankBehaviorScenario.add(Actions.FIRE);
         tankBehaviorScenario.add(Actions.MOVE);
+    }
+
+    public boolean spottedTheEnemy (int y, int x) {
+        if ((x == this.defender.getTankXQuadrant()) && y < this.defender.getTankYQuadrant()) {
+            tankBehaviorScenario.add(Direction.DOWN);
+            tankBehaviorScenario.add(Actions.FIRE);
+            System.out.println("defender is down -> Fire");
+            return true;
+        }
+        if ((x == this.defender.getTankXQuadrant()) && y > this.defender.getTankYQuadrant()) {
+            tankBehaviorScenario.add(Direction.UP);
+            tankBehaviorScenario.add(Actions.FIRE);
+            System.out.println("defender is up -> Fire");
+            return true;
+        }
+        if ((y == this.defender.getTankYQuadrant()) && x > this.defender.getTankXQuadrant()) {
+            tankBehaviorScenario.add(Direction.LEFT);
+            tankBehaviorScenario.add(Actions.FIRE);
+            System.out.println("defender is left -> Fire");
+            return true;
+        }
+        if ((y == this.defender.getTankYQuadrant()) && x < this.defender.getTankXQuadrant()) {
+            tankBehaviorScenario.add(Direction.RIGHT);
+            tankBehaviorScenario.add(Actions.FIRE);
+            System.out.println("defender is right -> Fire");
+            return true;
+        }
+        return false;
     }
 
     public boolean isPathClearToMoveDown(int tankCoordinateY, int tankCoordinateX) {

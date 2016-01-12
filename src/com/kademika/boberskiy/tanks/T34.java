@@ -17,8 +17,8 @@ import java.util.NoSuchElementException;
  */
 public class T34 extends AbstractTank {
 
-    public T34(ActionField af, BattleField bf) {
-        super(af, bf);
+    public T34(ActionField af, BattleField bf, Tiger agressor) {
+        super(af, bf, agressor);
         tankColor = new Color(128, 255, 0);
         towerColor = new Color(255, 0, 128);
         try {
@@ -31,8 +31,8 @@ public class T34 extends AbstractTank {
         }
     }
 
-    public T34(ActionField af, BattleField bf, int x, int y, Direction direction) {
-        super(af, bf, x, y, direction);
+    public T34(ActionField af, BattleField bf, Tiger agressor, int x, int y, Direction direction) {
+        super(af, bf, agressor, x, y, direction);
         tankColor = new Color(128, 255, 0);
         towerColor = new Color(255, 0, 128);
         try {

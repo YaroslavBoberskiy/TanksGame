@@ -31,12 +31,12 @@ public abstract class AbstractTank implements Drawable, Destroyable, Tankable, I
     public BattleField bf;
     private ActionField af;
 
-    AbstractTank(ActionField af, BattleField bf) {
-        this(af, bf, 512, 0, Direction.RIGHT);
+    AbstractTank(ActionField af, BattleField bf, AbstractTank tank) {
+        this(af, bf, tank, 512, 0, Direction.RIGHT);
         this.destroyed = false;
     }
 
-    AbstractTank(ActionField af, BattleField bf, int x, int y, Direction direction) {
+    AbstractTank(ActionField af, BattleField bf, AbstractTank tank, int x, int y, Direction direction) {
         this.af = af;
         this.bf = bf;
         this.x = x;

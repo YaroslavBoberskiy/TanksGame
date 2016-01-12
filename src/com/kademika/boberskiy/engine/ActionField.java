@@ -17,8 +17,8 @@ public class ActionField extends JPanel {
 
     public ActionField() throws Exception {
         battleField = new BattleField();
-        defender = new T34(this, battleField, 0, 512, Direction.UP);
-        agressor = new Tiger(this, battleField, 128, 128, Direction.DOWN);
+        defender = new T34(this, battleField, agressor, 0, 512, Direction.UP);
+        agressor = new Tiger(this, battleField, defender, 128, 128, Direction.DOWN);
         bullet = new Bullet(-1000, -1000, Direction.NONE);
         JFrame frame = new JFrame("BATTLE FIELD, DAY 7");
         frame.setLocation(750, 150);
@@ -31,7 +31,8 @@ public class ActionField extends JPanel {
 
     void runTheGame() throws Exception {
 
-        agressor.destroyEagleScenario();
+        //agressor.destroyEagleScenario();
+        agressor.destroyDefenderScenario();
 
         while (true) {
             if (!agressor.isDestroyed() && !defender.isDestroyed() && battleField.scanQuadrant(8, 4).getClass().getName().contains("Eagle")) {
