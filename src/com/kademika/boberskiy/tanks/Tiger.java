@@ -68,7 +68,6 @@ public class Tiger extends AbstractTank {
         Direction direction = getDirection();
         boolean fireEmplacementCheck = false;
 
-
         while (fireEmplacementCheck == false) {
             if (tankCoordinateY >= 0 && tankCoordinateX >= 0 && tankCoordinateY <= 8 && tankCoordinateX <= 8) {
 
@@ -76,40 +75,61 @@ public class Tiger extends AbstractTank {
 
                 if (isPathClearToMoveDown(tankCoordinateY, tankCoordinateX) == true) {
                     System.out.println("Path down towards Eagle is clear");
-                    tankBehaviorScenario.add(Direction.DOWN);
-                    tankBehaviorScenario.add(Actions.FIRE);
-                    tankBehaviorScenario.add(Actions.MOVE);
+                    addMoveDownActions();
                     direction = Direction.DOWN;
                     tankCoordinateY++;
                     fireEmplacementCheck = fireEmplacementCheck(tankCoordinateY, tankCoordinateX);
-                } else {
-                    if (!(getObjectInFrontOfTank(tankCoordinateY, tankCoordinateX) instanceof Rock)) {
-                        tankBehaviorScenario.add(Direction.DOWN);
-                        tankBehaviorScenario.add(Actions.FIRE);
-                        tankBehaviorScenario.add(Actions.MOVE);
-                        direction = Direction.DOWN;
-                        tankCoordinateY++;
-                        fireEmplacementCheck = fireEmplacementCheck(tankCoordinateY, tankCoordinateX);
-                    } else if (getObjectInFrontOfTank(tankCoordinateY, tankCoordinateX) instanceof Rock) {
-                        tankBehaviorScenario.add(Direction.LEFT);
-                        tankBehaviorScenario.add(Actions.FIRE);
-                        tankBehaviorScenario.add(Actions.MOVE);
-                        direction = Direction.LEFT;
-                        tankCoordinateX--;
-                        fireEmplacementCheck = fireEmplacementCheck(tankCoordinateY, tankCoordinateX);
-                    }
+                }
+                else if (isPathClearToMoveDown(tankCoordinateY, tankCoordinateX) == false && tankCoordinateX < 5) {
+                    addMoveRightActions();
+                    direction = Direction.RIGHT;
+                    tankCoordinateX++;
+                    fireEmplacementCheck = fireEmplacementCheck(tankCoordinateY, tankCoordinateX);
+                }
+                else if (isPathClearToMoveDown(tankCoordinateY, tankCoordinateX) == false && tankCoordinateX >= 5) {
+                    addMoveLeftActions();
+                    direction = Direction.LEFT;
+                    tankCoordinateX--;
+                    fireEmplacementCheck = fireEmplacementCheck(tankCoordinateY, tankCoordinateX);
                 }
             }
         }
     }
 
+    public void destroyDefenderScenario() {
+
+    }
+
+    public void addMoveDownActions() {
+        tankBehaviorScenario.add(Direction.DOWN);
+        tankBehaviorScenario.add(Actions.FIRE);
+        tankBehaviorScenario.add(Actions.MOVE);
+    }
+
+    public void addMoveLeftActions() {
+        tankBehaviorScenario.add(Direction.LEFT);
+        tankBehaviorScenario.add(Actions.FIRE);
+        tankBehaviorScenario.add(Actions.MOVE);
+    }
+
+    public void addMoveRightActions() {
+        tankBehaviorScenario.add(Direction.RIGHT);
+        tankBehaviorScenario.add(Actions.FIRE);
+        tankBehaviorScenario.add(Actions.MOVE);
+    }
+
     public boolean isPathClearToMoveDown(int tankCoordinateY, int tankCoordinateX) {
-        if (!scanFrontPath(Direction.DOWN, tankCoordinateY, tankCoordinateX).contains("R") &&
-                scanFrontPath(Direction.DOWN, tankCoordinateY, tankCoordinateX).length() > 1) {
-            return true;
-        } else {
-            return false;
+        int twoStepsForward = tankCoordinateY + 1;
+        if (twoStepsForward <= 7) {
+            if (!(getObjectInFrontOfTank(tankCoordinateY, tankCoordinateX) instanceof Rock) &&
+                    !(getObjectInFrontOfTank(twoStepsForward, tankCoordinateX) instanceof Rock) &&
+                    scanFrontPath(Direction.DOWN, tankCoordinateY, tankCoordinateX).length() > 1) {
+                return true;
+            } else {
+                return false;
+            }
         }
+        return false;
     }
 
     public boolean fireEmplacementCheck(int tankCoordinateY, int tankCoordinateX) {

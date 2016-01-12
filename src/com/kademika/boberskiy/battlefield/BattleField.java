@@ -15,11 +15,11 @@ public class BattleField {
     private String[][] battleFieldMap = {
             {"empty", "empty", "empty", "empty", "rock", "empty", "empty", "empty", "empty"},
             {"empty", "water", "water", "empty", "rock", "empty", "water", "water", "brick"},
-            {"brick", "brick", "brick", "brick", "brick", "brick", "brick", "brick", "brick"},
+            {"brick", "brick", "empty", "brick", "brick", "brick", "brick", "brick", "brick"},
             {"empty", "empty", "water", "water", "brick", "water", "water", "empty", "empty"},
-            {"brick", "brick", "brick", "brick", "brick", "brick", "brick", "brick", "brick"},
-            {"rock", "empty", "rock", "empty", "rock", "empty", "rock", "rock", "rock"},
-            {"empty", "brick", "empty", "empty", "empty", "empty", "empty", "brick", "empty"},
+            {"brick", "rock", "brick", "rock", "brick", "rock", "empty", "rock", "brick"},
+            {"rock", "rock", "empty", "rock", "rock", "rock", "empty", "rock", "rock"},
+            {"brick", "brick", "empty", "empty", "empty", "empty", "empty", "brick", "brick"},
             {"empty", "brick", "empty", "brick", "brick", "brick", "empty", "brick", "empty"},
             {"empty", "brick", "empty", "brick", "eagle", "brick", "empty", "brick", "empty"}};
 

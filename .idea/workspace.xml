@@ -46,8 +46,8 @@
       <file leaf-file-name="ActionField.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/kademika/boberskiy/engine/ActionField.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1099" max-vertical-offset="3468">
-              <caret line="79" column="24" selection-start-line="79" selection-start-column="24" selection-end-line="79" selection-end-column="24" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="3468">
+              <caret line="20" column="56" selection-start-line="20" selection-start-column="56" selection-end-line="20" selection-end-column="56" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -55,24 +55,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Tiger.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Tiger.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/kademika/boberskiy/tanks/Tiger.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1155" max-vertical-offset="3434">
-              <caret line="98" column="102" selection-start-line="98" selection-start-column="102" selection-end-line="98" selection-end-column="102" />
+            <state vertical-scroll-proportion="0.77458036" vertical-offset="1224" max-vertical-offset="3774">
+              <caret line="99" column="8" selection-start-line="99" selection-start-column="8" selection-end-line="99" selection-end-column="8" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BattleField.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BattleField.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/kademika/boberskiy/battlefield/BattleField.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.40227273" vertical-offset="163" max-vertical-offset="2091">
-              <caret line="20" column="77" selection-start-line="20" selection-start-column="77" selection-end-line="20" selection-end-column="77" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1020" max-vertical-offset="2091">
+              <caret line="17" column="37" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
               <folding>
-                <element signature="e#3772#3773#0" expanded="true" />
-                <element signature="e#3812#3813#0" expanded="true" />
+                <element signature="e#3767#3768#0" expanded="true" />
+                <element signature="e#3807#3808#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -81,16 +81,10 @@
       <file leaf-file-name="AbstractTank.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/kademika/boberskiy/tanks/AbstractTank.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1146" max-vertical-offset="2635">
-              <caret line="86" column="72" selection-start-line="86" selection-start-column="72" selection-end-line="86" selection-end-column="72" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="330" max-vertical-offset="2533">
+              <caret line="34" column="27" selection-start-line="34" selection-start-column="27" selection-end-line="34" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3369#3370#0" expanded="true" />
-                <element signature="e#3405#3406#0" expanded="true" />
-                <element signature="e#3442#3443#0" expanded="true" />
-                <element signature="e#3479#3480#0" expanded="true" />
-                <element signature="e#3516#3517#0" expanded="true" />
-                <element signature="e#3553#3554#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -112,19 +106,7 @@
             <state vertical-scroll-proportion="0.0" vertical-offset="84" max-vertical-offset="935">
               <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
               <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#680#681#0" expanded="false" />
-                <element signature="e#714#715#0" expanded="false" />
-                <element signature="e#751#752#0" expanded="false" />
-                <element signature="e#785#786#0" expanded="false" />
-                <element signature="e#823#824#0" expanded="false" />
-                <element signature="e#860#861#0" expanded="false" />
-                <element signature="e#898#899#0" expanded="false" />
-                <element signature="e#935#936#0" expanded="false" />
-                <element signature="e#982#983#0" expanded="false" />
-                <element signature="e#1014#1015#0" expanded="false" />
-                <element signature="e#1568#1569#0" expanded="false" />
-                <element signature="e#1596#1597#0" expanded="false" />
+                <element signature="e#1096#1097#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -133,7 +115,7 @@
       <file leaf-file-name="Water.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/kademika/boberskiy/battlefield/Water.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="122" max-vertical-offset="595">
+            <state vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="527">
               <caret line="17" column="59" selection-start-line="17" selection-start-column="59" selection-end-line="17" selection-end-column="59" />
               <folding />
             </state>
@@ -155,7 +137,7 @@
       <file leaf-file-name="Eagle.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/kademika/boberskiy/battlefield/Eagle.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="20" max-vertical-offset="493">
+            <state vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="442">
               <caret line="16" column="59" selection-start-line="16" selection-start-column="59" selection-end-line="16" selection-end-column="59" />
               <folding />
             </state>
@@ -167,9 +149,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="238" max-vertical-offset="459">
               <caret line="17" column="59" selection-start-line="17" selection-start-column="59" selection-end-line="17" selection-end-column="59" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -220,10 +200,10 @@
         <option value="$PROJECT_DIR$/src/com/kademika/boberskiy/battlefield/Brick.java" />
         <option value="$PROJECT_DIR$/src/com/kademika/boberskiy/tanks/T34.java" />
         <option value="$PROJECT_DIR$/src/com/kademika/boberskiy/battlefield/Abroad.java" />
+        <option value="$PROJECT_DIR$/src/com/kademika/boberskiy/battlefield/BattleField.java" />
         <option value="$PROJECT_DIR$/src/com/kademika/boberskiy/tanks/AbstractTank.java" />
         <option value="$PROJECT_DIR$/src/com/kademika/boberskiy/engine/ActionField.java" />
         <option value="$PROJECT_DIR$/src/com/kademika/boberskiy/tanks/Tiger.java" />
-        <option value="$PROJECT_DIR$/src/com/kademika/boberskiy/battlefield/BattleField.java" />
       </list>
     </option>
   </component>
@@ -235,7 +215,6 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-15" />
-    <option name="y" value="-2" />
     <option name="width" value="1382" />
     <option name="height" value="744" />
   </component>
@@ -364,6 +343,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope">
         <subPane subId="Project Files">
           <PATH>
@@ -392,7 +372,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -735,7 +714,9 @@
       <workItem from="1452204935166" duration="10624000" />
       <workItem from="1452365486674" duration="11190000" />
       <workItem from="1452422727002" duration="28186000" />
-      <workItem from="1452521749413" duration="14857000" />
+      <workItem from="1452521749413" duration="14916000" />
+      <workItem from="1452588812190" duration="81000" />
+      <workItem from="1452602616686" duration="12541000" />
     </task>
     <task id="LOCAL-00001" summary="JAR file was created">
       <created>1445854925899</created>
@@ -803,14 +784,20 @@
       <option name="project" value="LOCAL" />
       <updated>1452456203078</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Tanks game with E destroy Alg optimized (Intermediate var)">
+      <created>1452556789466</created>
+      <option name="number" value="00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1452556789466</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="201616000" />
+    <option name="totallyTimeSpent" value="214297000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-15" y="-2" width="1382" height="744" extended-state="0" />
+    <frame x="-15" y="0" width="1382" height="744" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
@@ -824,7 +811,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32930514" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23980424" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25611746" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19033232" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -866,7 +853,8 @@
     <MESSAGE value="Tanks game with images" />
     <MESSAGE value="Tanks game with transparent water" />
     <MESSAGE value="Tanks game with transparent water (Intermediate var)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tanks game with transparent water (Intermediate var)" />
+    <MESSAGE value="Tanks game with E destroy Alg optimized (Intermediate var)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tanks game with E destroy Alg optimized (Intermediate var)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -883,9 +871,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="238" max-vertical-offset="459">
           <caret line="17" column="59" selection-start-line="17" selection-start-column="59" selection-end-line="17" selection-end-column="59" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -904,8 +890,8 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="1255" max-vertical-offset="1921">
           <caret line="83" column="37" selection-start-line="83" selection-start-column="37" selection-end-line="83" selection-end-column="37" />
           <folding>
-            <element signature="e#4239#4240#0" expanded="false" />
-            <element signature="e#4279#4280#0" expanded="false" />
+            <element signature="e#3767#3768#0" expanded="true" />
+            <element signature="e#3807#3808#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -922,7 +908,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="263" max-vertical-offset="969">
           <caret line="47" column="44" selection-start-line="47" selection-start-column="44" selection-end-line="47" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -931,8 +916,8 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="195" max-vertical-offset="782">
           <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
           <folding>
-            <element signature="e#4239#4240#0" expanded="false" />
-            <element signature="e#4279#4280#0" expanded="false" />
+            <element signature="e#3767#3768#0" expanded="true" />
+            <element signature="e#3807#3808#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -965,7 +950,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="238" max-vertical-offset="340">
           <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -974,8 +958,8 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="195" max-vertical-offset="782">
           <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
           <folding>
-            <element signature="e#4239#4240#0" expanded="false" />
-            <element signature="e#4279#4280#0" expanded="false" />
+            <element signature="e#3767#3768#0" expanded="true" />
+            <element signature="e#3807#3808#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1008,7 +992,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="238" max-vertical-offset="340">
           <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1017,8 +1000,8 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="195" max-vertical-offset="782">
           <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
           <folding>
-            <element signature="e#4239#4240#0" expanded="false" />
-            <element signature="e#4279#4280#0" expanded="false" />
+            <element signature="e#3767#3768#0" expanded="true" />
+            <element signature="e#3807#3808#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1051,7 +1034,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="238" max-vertical-offset="340">
           <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1060,8 +1042,8 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="195" max-vertical-offset="782">
           <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
           <folding>
-            <element signature="e#4239#4240#0" expanded="false" />
-            <element signature="e#4279#4280#0" expanded="false" />
+            <element signature="e#3767#3768#0" expanded="true" />
+            <element signature="e#3807#3808#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1094,7 +1076,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1103,8 +1084,8 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="561" max-vertical-offset="1020">
           <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
           <folding>
-            <element signature="e#4239#4240#0" expanded="false" />
-            <element signature="e#4279#4280#0" expanded="false" />
+            <element signature="e#3767#3768#0" expanded="true" />
+            <element signature="e#3807#3808#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1204,7 +1185,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="73" max-vertical-offset="323">
           <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1212,20 +1192,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1377">
           <caret line="19" column="30" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
-          <folding>
-            <element signature="e#1039#1040#0" expanded="true" />
-            <element signature="e#1067#1068#0" expanded="true" />
-            <element signature="e#1092#1093#0" expanded="true" />
-            <element signature="e#1116#1117#0" expanded="true" />
-            <element signature="e#1141#1142#0" expanded="true" />
-            <element signature="e#1165#1166#0" expanded="true" />
-            <element signature="e#1204#1205#0" expanded="true" />
-            <element signature="e#1236#1237#0" expanded="true" />
-            <element signature="e#1333#1334#0" expanded="true" />
-            <element signature="e#1360#1361#0" expanded="true" />
-            <element signature="e#1871#1872#0" expanded="true" />
-            <element signature="e#1903#1904#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1241,9 +1207,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="459">
           <caret line="17" column="59" selection-start-line="17" selection-start-column="59" selection-end-line="17" selection-end-column="59" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1251,7 +1215,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="151" max-vertical-offset="1292">
           <caret line="41" column="81" selection-start-line="41" selection-start-column="81" selection-end-line="41" selection-end-column="81" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1268,19 +1231,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="84" max-vertical-offset="935">
           <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#680#681#0" expanded="false" />
-            <element signature="e#714#715#0" expanded="false" />
-            <element signature="e#751#752#0" expanded="false" />
-            <element signature="e#785#786#0" expanded="false" />
-            <element signature="e#823#824#0" expanded="false" />
-            <element signature="e#860#861#0" expanded="false" />
-            <element signature="e#898#899#0" expanded="false" />
-            <element signature="e#935#936#0" expanded="false" />
-            <element signature="e#982#983#0" expanded="false" />
-            <element signature="e#1014#1015#0" expanded="false" />
-            <element signature="e#1568#1569#0" expanded="false" />
-            <element signature="e#1596#1597#0" expanded="false" />
+            <element signature="e#1096#1097#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1303,26 +1254,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/kademika/boberskiy/battlefield/BattleField.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1020" max-vertical-offset="2091">
+          <caret line="17" column="37" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
+          <folding>
+            <element signature="e#3767#3768#0" expanded="true" />
+            <element signature="e#3807#3808#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/kademika/boberskiy/tanks/AbstractTank.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1146" max-vertical-offset="2635">
-          <caret line="86" column="72" selection-start-line="86" selection-start-column="72" selection-end-line="86" selection-end-column="72" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="330" max-vertical-offset="2533">
+          <caret line="34" column="27" selection-start-line="34" selection-start-column="27" selection-end-line="34" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3369#3370#0" expanded="true" />
-            <element signature="e#3405#3406#0" expanded="true" />
-            <element signature="e#3442#3443#0" expanded="true" />
-            <element signature="e#3479#3480#0" expanded="true" />
-            <element signature="e#3516#3517#0" expanded="true" />
-            <element signature="e#3553#3554#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/kademika/boberskiy/engine/ActionField.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1099" max-vertical-offset="3468">
-          <caret line="79" column="24" selection-start-line="79" selection-start-column="24" selection-end-line="79" selection-end-column="24" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="3468">
+          <caret line="20" column="56" selection-start-line="20" selection-start-column="56" selection-end-line="20" selection-end-column="56" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1331,20 +1287,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/kademika/boberskiy/tanks/Tiger.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1155" max-vertical-offset="3434">
-          <caret line="98" column="102" selection-start-line="98" selection-start-column="102" selection-end-line="98" selection-end-column="102" />
+        <state vertical-scroll-proportion="0.77458036" vertical-offset="1224" max-vertical-offset="3774">
+          <caret line="99" column="8" selection-start-line="99" selection-start-column="8" selection-end-line="99" selection-end-column="8" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/kademika/boberskiy/battlefield/BattleField.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40227273" vertical-offset="163" max-vertical-offset="2091">
-          <caret line="20" column="77" selection-start-line="20" selection-start-column="77" selection-end-line="20" selection-end-column="77" />
-          <folding>
-            <element signature="e#3772#3773#0" expanded="true" />
-            <element signature="e#3812#3813#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>

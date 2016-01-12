@@ -18,7 +18,7 @@ public class ActionField extends JPanel {
     public ActionField() throws Exception {
         battleField = new BattleField();
         defender = new T34(this, battleField, 0, 512, Direction.UP);
-        agressor = new Tiger(this, battleField, 512, 0, Direction.DOWN);
+        agressor = new Tiger(this, battleField, 128, 128, Direction.DOWN);
         bullet = new Bullet(-1000, -1000, Direction.NONE);
         JFrame frame = new JFrame("BATTLE FIELD, DAY 7");
         frame.setLocation(750, 150);
