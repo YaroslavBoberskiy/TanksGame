@@ -190,6 +190,7 @@ public class ActionField extends JPanel {
 
     @Override
     protected void paintComponent(Graphics g) {
+        System.out.println("PAINT COMPONENT!!!!");
         super.paintComponent(g);
         battleField.drawField(g);
         battleField.drawObjectsBesidesWater(g);
