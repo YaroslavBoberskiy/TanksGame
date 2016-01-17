@@ -74,7 +74,7 @@ public class StartMenu extends JFrame implements ActionListener {
         super("Game settings");
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setLocation(300, 100);
-        setResizable(true);
+        setResizable(false);
         this.setLayout(new BorderLayout());
         chooseAgressorPanel = new JPanel();
         agressorComboBoxPanel = new JPanel();

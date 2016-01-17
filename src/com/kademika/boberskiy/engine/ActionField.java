@@ -14,13 +14,15 @@ public class ActionField extends JPanel {
     private T34 defender;
     private Tiger agressor;
     private Bullet bullet;
+    private EndMenu endMenu;
+    private JFrame frame;
 
     public ActionField() throws Exception {
         battleField = new BattleField();
         defender = new T34(this, battleField, agressor, 0, 512, Direction.UP);
-        agressor = new Tiger(this, battleField, defender, 128, 128, Direction.DOWN);
+        agressor = new Tiger(this, battleField, defender, 128, 384, Direction.DOWN);
         bullet = new Bullet(-1000, -1000, Direction.NONE);
-        JFrame frame = new JFrame("BATTLE FIELD, DAY 7");
+        frame = new JFrame("BATTLE FIELD, DAY 7");
         frame.setLocation(750, 150);
         frame.setMinimumSize(new Dimension(battleField.getBfWidth(), battleField.getBfHeight() + 22));
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -42,6 +44,10 @@ public class ActionField extends JPanel {
             }
         }
 
+        frame.dispose();
+
+        EndMenu endMenu = new EndMenu(this);
+        endMenu.setVisible(true);
     }
 
     private void processAction(Actions a, AbstractTank tank) throws Exception {
@@ -186,6 +192,18 @@ public class ActionField extends JPanel {
 
     String getQuadrant(int y, int x) {
         return x / 64 + "_" + y / 64;
+    }
+
+    public BattleField getBattleField() {
+        return battleField;
+    }
+
+    public T34 getDefender() {
+        return defender;
+    }
+
+    public Tiger getAgressor() {
+        return agressor;
     }
 
     @Override
