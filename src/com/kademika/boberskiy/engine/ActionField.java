@@ -14,13 +14,12 @@ public class ActionField extends JPanel {
     private T34 defender;
     private Tiger agressor;
     private Bullet bullet;
-    private EndMenu endMenu;
     private JFrame frame;
 
     public ActionField() throws Exception {
-        battleField = new BattleField();
-        defender = new T34(this, battleField, agressor, 0, 512, Direction.UP);
-        agressor = new Tiger(this, battleField, defender, 128, 384, Direction.DOWN);
+        battleField = new BattleField(this);
+        defender = new T34(battleField, 128, 512, Direction.UP);
+        agressor = new Tiger(battleField, 384, 256, Direction.DOWN);
         bullet = new Bullet(-1000, -1000, Direction.NONE);
         frame = new JFrame("BATTLE FIELD, DAY 7");
         frame.setLocation(750, 150);
@@ -33,12 +32,14 @@ public class ActionField extends JPanel {
 
     void runTheGame() throws Exception {
 
-        //agressor.destroyEagleScenario();
-        agressor.destroyDefenderScenario();
-
         while (true) {
             if (!agressor.isDestroyed() && !defender.isDestroyed() && battleField.scanQuadrant(8, 4).getClass().getName().contains("Eagle")) {
-                processAction(agressor.setUp(), agressor);
+//                agressor.destroyScenario("T");
+//                processAction(agressor.setUp(), agressor);
+//                agressor.tankBehaviorScenario.clear();
+                defender.defendTheEagle();
+                processAction(defender.setUp(), defender);
+                defender.tankBehaviorScenario.clear();
             } else {
                 break;
             }
@@ -208,7 +209,6 @@ public class ActionField extends JPanel {
 
     @Override
     protected void paintComponent(Graphics g) {
-        System.out.println("PAINT COMPONENT!!!!");
         super.paintComponent(g);
         battleField.drawField(g);
         battleField.drawObjectsBesidesWater(g);

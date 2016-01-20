@@ -1,6 +1,5 @@
 package com.kademika.boberskiy.tanks;
-import com.kademika.boberskiy.battlefield.BattleField;
-import com.kademika.boberskiy.battlefield.BattleFieldAbstractObject;
+import com.kademika.boberskiy.battlefield.*;
 import com.kademika.boberskiy.engine.ActionField;
 import com.kademika.boberskiy.engine.Destroyable;
 import com.kademika.boberskiy.engine.Direction;
@@ -29,15 +28,13 @@ public abstract class AbstractTank implements Drawable, Destroyable, Tankable, I
     Image tankImageUp;
     Image tankImageDown;
     public BattleField bf;
-    private ActionField af;
 
-    AbstractTank(ActionField af, BattleField bf, AbstractTank tank) {
-        this(af, bf, tank, 512, 0, Direction.RIGHT);
+    AbstractTank(BattleField bf) {
+        this(bf, 512, 0, Direction.RIGHT);
         this.destroyed = false;
     }
 
-    AbstractTank(ActionField af, BattleField bf, AbstractTank tank, int x, int y, Direction direction) {
-        this.af = af;
+    AbstractTank(BattleField bf, int x, int y, Direction direction) {
         this.bf = bf;
         this.x = x;
         this.y = y;
@@ -70,7 +67,7 @@ public abstract class AbstractTank implements Drawable, Destroyable, Tankable, I
         int bulletY = -100;
         if (direction == Direction.UP && getY() > bf.getBF_MIN_COORDINATE()) {
             bulletX = x + 25;
-            bulletY = y - 64;
+            bulletY = y;
         } else if (direction == Direction.DOWN && getY() < bf.getBF_MAX_COORDINATE()) {
             bulletX = x + 25;
             bulletY = y + 64;
@@ -86,7 +83,7 @@ public abstract class AbstractTank implements Drawable, Destroyable, Tankable, I
 
     public BattleFieldAbstractObject getObjectInFrontOfTank (int y, int x) {
 
-        if (direction == Direction.DOWN && getTankYQuadrant() < 8) {
+        if (direction == Direction.DOWN && y < 8) {
             bfObject = bf.scanQuadrant(y+1, x);
         } else if (direction == Direction.UP && y > 0) {
             bfObject = bf.scanQuadrant(y-1, x);
@@ -99,6 +96,55 @@ public abstract class AbstractTank implements Drawable, Destroyable, Tankable, I
         }
         return bfObject;
     }
+
+    public String scanFrontPath(Direction direction, int y, int x) {
+        String pathCode = "";
+        if (x < 9 && y < 9 && x >= 0 && y >= 0) {
+            if (direction.equals(Direction.LEFT)) {
+                pathCode = "";
+                for (; x >= 0; x--) {
+                    pathCode += getFieldObjectID(y, x);
+                }
+            } else if (direction.equals(Direction.RIGHT)) {
+                pathCode = "";
+                for (; x < 9; x++) {
+                    pathCode += getFieldObjectID(y, x);
+                }
+            } else if (direction.equals(Direction.DOWN)) {
+                pathCode = "";
+                for (; y < 9; y++) {
+                    pathCode += getFieldObjectID(y, x);
+                }
+            } else if (direction.equals(Direction.UP)) {
+                pathCode = "";
+                for (; y >= 0; y--) {
+                    pathCode += getFieldObjectID(y, x);
+                }
+            }
+        }
+
+        return pathCode;
+    }
+
+    public String getFieldObjectID(int y, int x) {
+
+        if (checkEnemyLocation(y, x) == true) {
+            return "T";
+        } else if (bf.scanQuadrant(y, x) instanceof Eagle) {
+            return "H";
+        } else if (bf.scanQuadrant(y, x) instanceof Rock) {
+            return "R";
+        } else if (bf.scanQuadrant(y, x) instanceof Water) {
+            return "W";
+        } else if (bf.scanQuadrant(y, x) instanceof Brick) {
+            return "B";
+        } else if (bf.scanQuadrant(y, x) instanceof Empty) {
+            return "E";
+        } else {
+            return "";
+        }
+    }
+
 
     public void move() {
     }
@@ -172,4 +218,5 @@ public abstract class AbstractTank implements Drawable, Destroyable, Tankable, I
         return movePath;
     }
 
+    public abstract boolean checkEnemyLocation(int y, int x);
 }

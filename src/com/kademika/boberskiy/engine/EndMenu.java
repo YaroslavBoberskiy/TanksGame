@@ -1,15 +1,11 @@
 package com.kademika.boberskiy.engine;
 
-import com.sun.prism.paint.*;
-
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
-import java.awt.image.ImageObserver;
 import java.io.File;
 import java.io.IOException;
 
@@ -26,7 +22,7 @@ public class EndMenu extends JFrame implements ActionListener {
     private ActionField af;
     private BufferedImage gameOverImage;
 
-    EndMenu (ActionField af) {
+    EndMenu(ActionField af) {
         super("Game over");
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -93,14 +89,15 @@ public class EndMenu extends JFrame implements ActionListener {
         return img;
     }
 
-    public String createResultMessage () {
+    public String createResultMessage() {
         if (af.getDefender().isDestroyed()) {
             return "Defender is destroyed!";
-        }
-        if (!af.getBattleField().scanQuadrant(8, 4).getClass().getName().contains("Eagle")) {
+        } else if (!af.getBattleField().scanQuadrant(8, 4).getClass().getName().contains("Eagle")) {
             return "Eagle is destroyed!";
+        } else if (af.getAgressor().isDestroyed()) {
+            return "Agressor is destroyed!";
         } else {
-            return "Oops!";
+            return "Oops! No algorithm!";
         }
     }
 

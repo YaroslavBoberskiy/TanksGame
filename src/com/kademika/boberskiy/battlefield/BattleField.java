@@ -1,4 +1,9 @@
 package com.kademika.boberskiy.battlefield;
+
+import com.kademika.boberskiy.engine.ActionField;
+import com.kademika.boberskiy.tanks.T34;
+import com.kademika.boberskiy.tanks.Tiger;
+
 import java.awt.*;
 
 /**
@@ -11,21 +16,25 @@ public class BattleField {
     private final int BF_MIN_COORDINATE = 0;
     private final int BF_MAX_COORDINATE = 576;
     private final boolean COLORED_MODE = false;
+    private ActionField af;
+    private Tiger agressor;
+    private T34 defender;
 
     private String[][] battleFieldMap = {
             {"empty", "empty", "empty", "empty", "rock", "empty", "empty", "empty", "empty"},
-            {"empty", "water", "water", "empty", "rock", "empty", "water", "water", "brick"},
-            {"brick", "brick", "empty", "brick", "brick", "brick", "brick", "brick", "brick"},
+            {"brick", "water", "water", "empty", "rock", "empty", "water", "water", "brick"},
+            {"brick", "brick", "brick", "brick", "brick", "brick", "brick", "brick", "brick"},
             {"empty", "empty", "water", "water", "brick", "water", "water", "empty", "empty"},
-            {"brick", "rock", "brick", "rock", "brick", "rock", "empty", "rock", "brick"},
-            {"rock", "rock", "empty", "rock", "rock", "rock", "empty", "rock", "rock"},
+            {"brick", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "brick"},
+            {"rock", "rock", "brick", "rock", "rock", "rock", "brick", "rock", "rock"},
             {"brick", "brick", "empty", "empty", "empty", "empty", "empty", "brick", "brick"},
             {"empty", "brick", "empty", "brick", "brick", "brick", "empty", "brick", "empty"},
             {"empty", "brick", "empty", "brick", "eagle", "brick", "empty", "brick", "empty"}};
 
     private BattleFieldAbstractObject[][] battleField = new BattleFieldAbstractObject[9][9];
 
-    public BattleField() {
+    public BattleField(ActionField af) {
+        this.af = af;
         createBattleField();
     }
 
@@ -90,6 +99,14 @@ public class BattleField {
                 }
             }
         }
+    }
+
+    public Tiger getAgressor() {
+        return af.getAgressor();
+    }
+
+    public T34 getDefender() {
+        return af.getDefender();
     }
 
     public BattleFieldAbstractObject scanQuadrant(int v, int h) {
