@@ -19,7 +19,7 @@ public class ActionField extends JPanel {
     public ActionField() throws Exception {
         battleField = new BattleField(this);
         defender = new T34(battleField, 128, 512, Direction.UP);
-        agressor = new Tiger(battleField, 384, 256, Direction.DOWN);
+        agressor = new Tiger(battleField, 0, 0, Direction.DOWN);
         bullet = new Bullet(-1000, -1000, Direction.NONE);
         frame = new JFrame("BATTLE FIELD, DAY 7");
         frame.setLocation(750, 150);
@@ -34,16 +34,19 @@ public class ActionField extends JPanel {
 
         while (true) {
             if (!agressor.isDestroyed() && !defender.isDestroyed() && battleField.scanQuadrant(8, 4).getClass().getName().contains("Eagle")) {
-//                agressor.destroyScenario("T");
+//                agressor.destroyScenario("H");
 //                processAction(agressor.setUp(), agressor);
-//                agressor.tankBehaviorScenario.clear();
+
                 defender.defendTheEagle();
                 processAction(defender.setUp(), defender);
-                defender.tankBehaviorScenario.clear();
+                //defender.tankBehaviorScenario.clear();
             } else {
                 break;
             }
         }
+
+        agressor.writeActionsToFile();
+        defender.writeActionsToFile();
 
         frame.dispose();
 

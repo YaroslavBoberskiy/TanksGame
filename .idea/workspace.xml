@@ -7,10 +7,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fbbfd55e-1a03-467d-9572-c1039ebd580f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/kademika/boberskiy/tanks/AbstractTank.java" afterPath="$PROJECT_DIR$/src/com/kademika/boberskiy/tanks/AbstractTank.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/kademika/boberskiy/engine/ActionsRecorder.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/agressor_actions.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/defender_actions.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/kademika/boberskiy/engine/ActionField.java" afterPath="$PROJECT_DIR$/src/com/kademika/boberskiy/engine/ActionField.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/kademika/boberskiy/battlefield/BattleField.java" afterPath="$PROJECT_DIR$/src/com/kademika/boberskiy/battlefield/BattleField.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/kademika/boberskiy/engine/EndMenu.java" afterPath="$PROJECT_DIR$/src/com/kademika/boberskiy/engine/EndMenu.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/kademika/boberskiy/tanks/T34.java" afterPath="$PROJECT_DIR$/src/com/kademika/boberskiy/tanks/T34.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/kademika/boberskiy/tanks/Tiger.java" afterPath="$PROJECT_DIR$/src/com/kademika/boberskiy/tanks/Tiger.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -55,11 +56,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EndMenu.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/kademika/boberskiy/engine/EndMenu.java">
+      <file leaf-file-name="ActionsRecorder.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/kademika/boberskiy/engine/ActionsRecorder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1360" max-vertical-offset="2329">
-              <caret line="97" column="28" selection-start-line="97" selection-start-column="28" selection-end-line="97" selection-end-column="28" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="646" max-vertical-offset="1241">
+              <caret line="44" column="44" selection-start-line="44" selection-start-column="44" selection-end-line="44" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -67,39 +68,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StartMenu.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/kademika/boberskiy/engine/StartMenu.java">
+      <file leaf-file-name="ActionField.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/kademika/boberskiy/engine/ActionField.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="3833" max-vertical-offset="4352">
-              <caret line="234" column="0" selection-start-line="234" selection-start-column="0" selection-end-line="234" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.7579618" vertical-offset="0" max-vertical-offset="3757">
+              <caret line="21" column="42" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#8230#8639#0" expanded="true" />
-                <element signature="e#8638#8639#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AbstractTank.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/kademika/boberskiy/tanks/AbstractTank.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="819" max-vertical-offset="3264">
-              <caret line="69" column="24" selection-start-line="69" selection-start-column="24" selection-end-line="69" selection-end-column="24" />
-              <folding>
-                <element signature="e#5225#5226#0" expanded="true" />
-                <element signature="e#5257#5258#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Bullet.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/kademika/boberskiy/tanks/Bullet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="1173">
-              <caret line="19" column="30" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -107,63 +83,21 @@
       <file leaf-file-name="Tiger.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/kademika/boberskiy/tanks/Tiger.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1835" max-vertical-offset="2941">
-              <caret line="128" column="66" selection-start-line="128" selection-start-column="19" selection-end-line="128" selection-end-column="96" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="2380" max-vertical-offset="3026">
+              <caret line="158" column="4" selection-start-line="158" selection-start-column="4" selection-end-line="161" selection-end-column="5" />
               <folding>
-                <element signature="e#469#477#0" expanded="true" />
+                <element signature="e#523#531#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="T34.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="T34.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/kademika/boberskiy/tanks/T34.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="2.1489842" vertical-offset="0" max-vertical-offset="2652">
-              <caret line="63" column="61" selection-start-line="63" selection-start-column="61" selection-end-line="63" selection-end-column="61" />
-              <folding>
-                <element signature="e#416#424#0" expanded="true" />
-                <element signature="e#4938#4939#0" expanded="true" />
-                <element signature="e#4973#4974#0" expanded="true" />
-                <element signature="e#5338#5339#0" expanded="true" />
-                <element signature="e#5366#5367#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BattleField.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/kademika/boberskiy/battlefield/BattleField.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2346">
-              <caret line="17" column="47" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="47" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#4169#4170#0" expanded="true" />
-                <element signature="e#4209#4210#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BattleFieldAbstractObject.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/kademika/boberskiy/battlefield/BattleFieldAbstractObject.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="445" max-vertical-offset="901">
-              <caret line="53" column="16" selection-start-line="53" selection-start-column="16" selection-end-line="53" selection-end-column="16" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1938" max-vertical-offset="2686">
+              <caret line="126" column="46" selection-start-line="126" selection-start-column="46" selection-end-line="126" selection-end-column="46" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ActionField.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/kademika/boberskiy/engine/ActionField.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="3706">
-              <caret line="21" column="45" selection-start-line="21" selection-start-column="45" selection-end-line="21" selection-end-column="45" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -175,7 +109,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Tanks_with_End_GUI" />
+        <entry key="$PROJECT_DIR$" value="Defend_the_Eagle_(End_of_6_Lesson)" />
       </map>
     </option>
   </component>
@@ -213,13 +147,14 @@
         <option value="$PROJECT_DIR$/src/com/kademika/boberskiy/battlefield/Abroad.java" />
         <option value="$PROJECT_DIR$/src/com/kademika/boberskiy/engine/Launcher.java" />
         <option value="$PROJECT_DIR$/src/com/kademika/boberskiy/engine/StartMenu.java" />
-        <option value="$PROJECT_DIR$/src/com/kademika/boberskiy/tanks/Tiger.java" />
         <option value="$PROJECT_DIR$/src/com/kademika/boberskiy/engine/EndMenu.java" />
         <option value="$PROJECT_DIR$/src/com/kademika/boberskiy/tanks/AbstractTank.java" />
-        <option value="$PROJECT_DIR$/src/com/kademika/boberskiy/engine/ActionField.java" />
         <option value="$PROJECT_DIR$/src/com/kademika/boberskiy/tanks/Bullet.java" />
         <option value="$PROJECT_DIR$/src/com/kademika/boberskiy/battlefield/BattleField.java" />
+        <option value="$PROJECT_DIR$/src/com/kademika/boberskiy/engine/ActionsRecorder.java" />
+        <option value="$PROJECT_DIR$/src/com/kademika/boberskiy/tanks/Tiger.java" />
         <option value="$PROJECT_DIR$/src/com/kademika/boberskiy/tanks/T34.java" />
+        <option value="$PROJECT_DIR$/src/com/kademika/boberskiy/engine/ActionField.java" />
       </list>
     </option>
   </component>
@@ -230,10 +165,9 @@
     <treeState />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
+    <option name="x" value="-2" />
     <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="height" value="728" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -358,9 +292,22 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TanksGame" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TanksGameRefactored" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope">
         <subPane subId="Project Files">
           <PATH>
@@ -389,6 +336,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -408,7 +356,7 @@
     <property name="options.lastSelected" value="project.propVCSSupport.Confirmation" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../BMW_Car_Shop" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="FullScreen" value="false" />
     <property name="LayoutCode.rearrangeEntriesJava" value="false" />
     <property name="OverrideImplement.combined" value="true" />
@@ -755,7 +703,9 @@
       <workItem from="1453126539698" duration="5656000" />
       <workItem from="1453136366077" duration="18710000" />
       <workItem from="1453234219331" duration="11331000" />
-      <workItem from="1453280511389" duration="3996000" />
+      <workItem from="1453280511389" duration="4731000" />
+      <workItem from="1455096757210" duration="9308000" />
+      <workItem from="1455110913685" duration="118000" />
     </task>
     <task id="LOCAL-00001" summary="JAR file was created">
       <created>1445854925899</created>
@@ -853,14 +803,20 @@
       <option name="project" value="LOCAL" />
       <updated>1453071363892</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Defender protects the Eagle">
+      <created>1453284554638</created>
+      <option name="number" value="00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1453284554639</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="306924000" />
+    <option name="totallyTimeSpent" value="317085000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-2" y="0" width="1382" height="728" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
@@ -874,7 +830,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32930514" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2137031" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14572865" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21903323" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -920,7 +876,8 @@
     <MESSAGE value="Tanks game with Eagle &amp; Def destroy Alg (Def is wery weak)" />
     <MESSAGE value="Tanks game with start GUI" />
     <MESSAGE value="Tanks game with start + end GUI" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tanks game with start + end GUI" />
+    <MESSAGE value="Defender protects the Eagle" />
+    <option name="LAST_COMMIT_MESSAGE" value="Defender protects the Eagle" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -935,41 +892,10 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/com/kademika/boberskiy/battlefield/BattleField.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1255" max-vertical-offset="1921">
-          <caret line="83" column="37" selection-start-line="83" selection-start-column="37" selection-end-line="83" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#4169#4170#0" expanded="true" />
-            <element signature="e#4209#4210#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/kademika/boberskiy/tanks/Tiger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2346">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#469#477#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/kademika/boberskiy/tanks/T34.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="263" max-vertical-offset="969">
-          <caret line="47" column="44" selection-start-line="47" selection-start-column="44" selection-end-line="47" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/kademika/boberskiy/battlefield/BattleField.java">
-      <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="195" max-vertical-offset="782">
           <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#4169#4170#0" expanded="true" />
-            <element signature="e#4209#4210#0" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1010,9 +936,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="195" max-vertical-offset="782">
           <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#4169#4170#0" expanded="true" />
-            <element signature="e#4209#4210#0" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1053,9 +977,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="195" max-vertical-offset="782">
           <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#4169#4170#0" expanded="true" />
-            <element signature="e#4209#4210#0" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1096,9 +1018,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="195" max-vertical-offset="782">
           <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#4169#4170#0" expanded="true" />
-            <element signature="e#4209#4210#0" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1139,9 +1059,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="561" max-vertical-offset="1020">
           <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#4169#4170#0" expanded="true" />
-            <element signature="e#4209#4210#0" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1251,7 +1169,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="20" max-vertical-offset="493">
           <caret line="16" column="59" selection-start-line="16" selection-start-column="59" selection-end-line="16" selection-end-column="59" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1259,7 +1176,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3324468" vertical-offset="1167" max-vertical-offset="20791">
           <caret line="103" column="22" selection-start-line="103" selection-start-column="22" selection-end-line="103" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1267,6 +1183,77 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="459">
           <caret line="18" column="59" selection-start-line="18" selection-start-column="49" selection-end-line="18" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/kademika/boberskiy/engine/EndMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1360" max-vertical-offset="2329">
+          <caret line="97" column="28" selection-start-line="97" selection-start-column="28" selection-end-line="97" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/kademika/boberskiy/battlefield/BattleFieldAbstractObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="462" max-vertical-offset="901">
+          <caret line="53" column="16" selection-start-line="53" selection-start-column="16" selection-end-line="53" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/kademika/boberskiy/tanks/Bullet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="1173">
+          <caret line="19" column="30" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/kademika/boberskiy/tanks/AbstractTank.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.18468468" vertical-offset="819" max-vertical-offset="3230">
+          <caret line="69" column="24" selection-start-line="69" selection-start-column="24" selection-end-line="69" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/kademika/boberskiy/engine/StartMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3833" max-vertical-offset="4352">
+          <caret line="234" column="0" selection-start-line="234" selection-start-column="0" selection-end-line="234" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#8230#8639#0" expanded="false" />
+            <element signature="e#8638#8639#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/kademika/boberskiy/battlefield/BattleField.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6126126" vertical-offset="289" max-vertical-offset="2312">
+          <caret line="33" column="42" selection-start-line="33" selection-start-column="42" selection-end-line="33" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/kademika/boberskiy/tanks/Tiger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2380" max-vertical-offset="3026">
+          <caret line="158" column="4" selection-start-line="158" selection-start-column="4" selection-end-line="161" selection-end-column="5" />
+          <folding>
+            <element signature="e#523#531#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/kademika/boberskiy/tanks/T34.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1890" max-vertical-offset="2686">
+          <caret line="126" column="46" selection-start-line="126" selection-start-column="46" selection-end-line="126" selection-end-column="46" />
           <folding />
         </state>
       </provider>
@@ -1279,97 +1266,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/kademika/boberskiy/engine/StartMenu.java">
+    <entry file="file://$PROJECT_DIR$/src/com/kademika/boberskiy/engine/ActionsRecorder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3833" max-vertical-offset="4352">
-          <caret line="234" column="0" selection-start-line="234" selection-start-column="0" selection-end-line="234" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#8230#8639#0" expanded="true" />
-            <element signature="e#8638#8639#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/kademika/boberskiy/engine/EndMenu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1360" max-vertical-offset="2329">
-          <caret line="97" column="28" selection-start-line="97" selection-start-column="28" selection-end-line="97" selection-end-column="28" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="646" max-vertical-offset="1241">
+          <caret line="44" column="44" selection-start-line="44" selection-start-column="44" selection-end-line="44" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/kademika/boberskiy/tanks/AbstractTank.java">
+    <entry file="file://$PROJECT_DIR$/resources/agressor_actions.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="819" max-vertical-offset="3264">
-          <caret line="69" column="24" selection-start-line="69" selection-start-column="24" selection-end-line="69" selection-end-column="24" />
-          <folding>
-            <element signature="e#5225#5226#0" expanded="true" />
-            <element signature="e#5257#5258#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="285">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/kademika/boberskiy/battlefield/BattleFieldAbstractObject.java">
+    <entry file="file://$PROJECT_DIR$/resources/defender_actions.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="462" max-vertical-offset="901">
-          <caret line="53" column="16" selection-start-line="53" selection-start-column="16" selection-end-line="53" selection-end-column="16" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="391">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/kademika/boberskiy/engine/ActionField.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="3706">
-          <caret line="21" column="45" selection-start-line="21" selection-start-column="45" selection-end-line="21" selection-end-column="45" />
+        <state vertical-scroll-proportion="0.7579618" vertical-offset="0" max-vertical-offset="3757">
+          <caret line="21" column="42" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/kademika/boberskiy/tanks/Tiger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1971" max-vertical-offset="2941">
-          <caret line="128" column="66" selection-start-line="128" selection-start-column="19" selection-end-line="128" selection-end-column="96" />
-          <folding>
-            <element signature="e#469#477#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/kademika/boberskiy/tanks/Bullet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="1173">
-          <caret line="19" column="30" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/kademika/boberskiy/battlefield/BattleField.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2346">
-          <caret line="17" column="47" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#4169#4170#0" expanded="true" />
-            <element signature="e#4209#4210#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/kademika/boberskiy/tanks/T34.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.1489842" vertical-offset="0" max-vertical-offset="2652">
-          <caret line="63" column="61" selection-start-line="63" selection-start-column="61" selection-end-line="63" selection-end-column="61" />
-          <folding>
-            <element signature="e#416#424#0" expanded="true" />
-            <element signature="e#4938#4939#0" expanded="true" />
-            <element signature="e#4973#4974#0" expanded="true" />
-            <element signature="e#5338#5339#0" expanded="true" />
-            <element signature="e#5366#5367#0" expanded="true" />
           </folding>
         </state>
       </provider>

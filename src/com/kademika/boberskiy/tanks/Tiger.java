@@ -1,6 +1,7 @@
 package com.kademika.boberskiy.tanks;
 
 import com.kademika.boberskiy.battlefield.*;
+import com.kademika.boberskiy.engine.ActionsRecorder;
 import com.kademika.boberskiy.engine.Direction;
 
 import javax.imageio.ImageIO;
@@ -78,7 +79,7 @@ public class Tiger extends AbstractTank {
                 fireEmplacementCheck = fireEmplacementCheck(target, tankCoordinateY, tankCoordinateX);
 
                 if (isPathClearToMoveDown(tankCoordinateY, tankCoordinateX) == true) {
-                    System.out.println("Path down towards target is clear");
+                    //System.out.println("Path down towards target is clear");
                     addMoveDownActions();
                     direction = Direction.DOWN;
                     tankCoordinateY++;
@@ -134,7 +135,7 @@ public class Tiger extends AbstractTank {
                     tankCoordinateY, tankCoordinateX).indexOf(target)).length(); i++) {
                 tankBehaviorScenario.add(Actions.FIRE);
             }
-            System.out.println("Clear Path To Target Found");
+            //System.out.println("Clear Path To Target Found");
             return true;
         } else {
             return false;
@@ -153,6 +154,11 @@ public class Tiger extends AbstractTank {
         } else {
             return Direction.NONE;
         }
+    }
+
+    public void writeActionsToFile () {
+        ActionsRecorder actionsRecorder = new ActionsRecorder(tankBehaviorScenario);
+        actionsRecorder.writeAgressorToFile();
     }
 
     @Override

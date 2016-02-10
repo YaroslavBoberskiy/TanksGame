@@ -1,6 +1,7 @@
 package com.kademika.boberskiy.tanks;
 
 import com.kademika.boberskiy.battlefield.BattleField;
+import com.kademika.boberskiy.engine.ActionsRecorder;
 import com.kademika.boberskiy.engine.Direction;
 
 import javax.imageio.ImageIO;
@@ -120,6 +121,12 @@ public class T34 extends AbstractTank {
     }
 
     private int currentStep = 0;
+
+    public void writeActionsToFile () {
+        ActionsRecorder actionsRecorder = new ActionsRecorder(tankBehaviorScenario);
+        actionsRecorder.writeDefenderToFile();
+
+    }
 
     @Override
     public Actions setUp() {
