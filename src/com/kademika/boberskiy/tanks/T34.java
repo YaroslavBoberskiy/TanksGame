@@ -124,8 +124,12 @@ public class T34 extends AbstractTank {
 
     public void writeActionsToFile () {
         ActionsRecorder actionsRecorder = new ActionsRecorder(tankBehaviorScenario);
-        actionsRecorder.writeDefenderToFile();
+        actionsRecorder.writeActions(this);
+    }
 
+    public void restoreActionsFromFile () {
+        ActionsRecorder actionsRecorder = new ActionsRecorder(tankBehaviorScenario);
+        tankBehaviorScenario = actionsRecorder.restoreScenarioFromFile(this);
     }
 
     @Override

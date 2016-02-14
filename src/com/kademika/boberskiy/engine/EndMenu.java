@@ -19,6 +19,7 @@ public class EndMenu extends JFrame implements ActionListener {
     private JPanel buttonsPanel;
     private JButton playAgainButton;
     private JButton exitButton;
+    private JButton watchRecordButton;
     private ActionField af;
     private BufferedImage gameOverImage;
 
@@ -43,14 +44,17 @@ public class EndMenu extends JFrame implements ActionListener {
         resultPanel = new JPanel();
         buttonsPanel = new JPanel();
         playAgainButton = new JButton("Play Again");
+        watchRecordButton = new JButton("Show Rec");
         exitButton = new JButton("Exit Game");
 
         resultPanel.setLayout(new BoxLayout(resultPanel, BoxLayout.Y_AXIS));
 
         playAgainButton.setName("playAgain");
+        watchRecordButton.setName("watchRecord");
         exitButton.setName("exit");
 
         playAgainButton.addActionListener(this);
+        watchRecordButton.addActionListener(this);
         exitButton.addActionListener(this);
 
         resultPanel.add(resultLabel);
@@ -58,10 +62,13 @@ public class EndMenu extends JFrame implements ActionListener {
         buttonsPanel.setBackground(Color.black);
         playAgainButton.setBackground(Color.black);
         playAgainButton.setForeground(Color.white);
+        watchRecordButton.setBackground(Color.black);
+        watchRecordButton.setForeground(Color.white);
         exitButton.setBackground(Color.black);
         exitButton.setForeground(Color.white);
 
         buttonsPanel.add(playAgainButton);
+        buttonsPanel.add(watchRecordButton);
         buttonsPanel.add(exitButton);
 
         add(resultPanel, BorderLayout.NORTH);
@@ -97,7 +104,7 @@ public class EndMenu extends JFrame implements ActionListener {
         } else if (af.getAgressor().isDestroyed()) {
             return "Agressor is destroyed!";
         } else {
-            return "Oops! No algorithm!";
+            return "Oops! No algorithm was found!";
         }
     }
 
@@ -112,6 +119,25 @@ public class EndMenu extends JFrame implements ActionListener {
                         try {
                             af = new ActionField();
                             af.runTheGame();
+                        } catch (InterruptedException iex) {
+                        } catch (Exception e1) {
+                            e1.printStackTrace();
+                        }
+                    }
+                };
+
+                Thread thr1 = new Thread(r1);
+
+                thr1.start();
+                this.dispose();
+            }
+            if (button.getName() == "watchRecord") {
+                System.out.println("SHOW REC");
+                Runnable r1 = new Runnable() {
+                    public void run() {
+                        try {
+                            af = new ActionField();
+                            af.watchRecordedGame();
                         } catch (InterruptedException iex) {
                         } catch (Exception e1) {
                             e1.printStackTrace();

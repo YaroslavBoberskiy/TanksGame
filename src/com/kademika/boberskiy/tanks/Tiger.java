@@ -135,7 +135,7 @@ public class Tiger extends AbstractTank {
                     tankCoordinateY, tankCoordinateX).indexOf(target)).length(); i++) {
                 tankBehaviorScenario.add(Actions.FIRE);
             }
-            //System.out.println("Clear Path To Target Found");
+            System.out.println("Clear Path To Target Found");
             return true;
         } else {
             return false;
@@ -158,7 +158,12 @@ public class Tiger extends AbstractTank {
 
     public void writeActionsToFile () {
         ActionsRecorder actionsRecorder = new ActionsRecorder(tankBehaviorScenario);
-        actionsRecorder.writeAgressorToFile();
+        actionsRecorder.writeActions(this);
+    }
+
+    public void restoreActionsFromFile () {
+        ActionsRecorder actionsRecorder = new ActionsRecorder(tankBehaviorScenario);
+        tankBehaviorScenario = actionsRecorder.restoreScenarioFromFile(this);
     }
 
     @Override

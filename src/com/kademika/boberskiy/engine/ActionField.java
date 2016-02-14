@@ -7,6 +7,9 @@ import com.kademika.boberskiy.tanks.*;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 
 public class ActionField extends JPanel {
 
@@ -21,7 +24,7 @@ public class ActionField extends JPanel {
         defender = new T34(battleField, 128, 512, Direction.UP);
         agressor = new Tiger(battleField, 0, 0, Direction.DOWN);
         bullet = new Bullet(-1000, -1000, Direction.NONE);
-        frame = new JFrame("BATTLE FIELD, DAY 7");
+        frame = new JFrame("BATTLE FIELD");
         frame.setLocation(750, 150);
         frame.setMinimumSize(new Dimension(battleField.getBfWidth(), battleField.getBfHeight() + 22));
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -34,8 +37,8 @@ public class ActionField extends JPanel {
 
         while (true) {
             if (!agressor.isDestroyed() && !defender.isDestroyed() && battleField.scanQuadrant(8, 4).getClass().getName().contains("Eagle")) {
-//                agressor.destroyScenario("H");
-//                processAction(agressor.setUp(), agressor);
+                agressor.destroyScenario("H");
+                processAction(agressor.setUp(), agressor);
 
                 defender.defendTheEagle();
                 processAction(defender.setUp(), defender);
@@ -54,11 +57,27 @@ public class ActionField extends JPanel {
         endMenu.setVisible(true);
     }
 
+    void watchRecordedGame () throws Exception{
+        agressor.restoreActionsFromFile();
+        defender.restoreActionsFromFile();
+        while (true) {
+            if (!agressor.isDestroyed() && !defender.isDestroyed() && battleField.scanQuadrant(8, 4).getClass().getName().contains("Eagle")) {
+                processAction(agressor.setUp(), agressor);
+                processAction(defender.setUp(), defender);
+            } else {
+                break;
+            }
+        }
+        frame.dispose();
+
+        EndMenu endMenu = new EndMenu(this);
+        endMenu.setVisible(true);
+    }
+
     private void processAction(Actions a, AbstractTank tank) throws Exception {
         if (a == Actions.MOVE) {
             processMove(tank);
         } else if (a == Actions.FIRE) {
-            processTurn(tank);
             processFire(tank.fire(), tank);
         }
     }
